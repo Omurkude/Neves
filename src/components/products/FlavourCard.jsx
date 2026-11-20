@@ -39,13 +39,13 @@ export default function FlavourCard({
         />
       </div>
 
-      {/* Flavour Name */}
-      <h3 className="mt-2 text-xs sm:text-base font-extrabold text-[#0B192C] tracking-tight leading-snug">
+      {/* Playful Heading using Baloo 2 */}
+      <h3 className="mt-2 text-xs sm:text-base font-baloo font-bold text-[#0B192C] tracking-tight leading-snug">
         {name}
       </h3>
 
-      {/* Flavour Tagline */}
-      <p className="mt-0.5 sm:mt-1 text-[10px] sm:text-xs text-slate-500 font-normal leading-tight min-h-[26px] sm:min-h-[30px] flex items-center justify-center">
+      {/* Subtitle using Nunito Sans */}
+      <p className="mt-0.5 sm:mt-1 text-[10px] sm:text-xs font-nunito text-slate-500 font-semibold leading-tight min-h-[26px] sm:min-h-[30px] flex items-center justify-center">
         {tagline}
       </p>
 

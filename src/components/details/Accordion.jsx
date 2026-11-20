@@ -2,8 +2,8 @@ import React from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 
 /**
- * Clean accordion component matching the COLLA reference screenshot.
- * Features icon on the left, bold title, and chevron toggle on the right.
+ * Clean accordion component matching the reference screenshot.
+ * Headings use Poppins, body content uses DM Sans / Inter.
  */
 export default function Accordion({
   id,
@@ -37,7 +37,8 @@ export default function Accordion({
               <Icon className="w-4 h-4 text-slate-800" strokeWidth={1.8} />
             </div>
           )}
-          <h3 className="text-sm sm:text-base font-bold text-[#0B192C] tracking-tight truncate">
+          {/* Headings using Poppins */}
+          <h3 className="text-sm sm:text-base font-poppins font-bold text-[#0B192C] tracking-tight truncate">
             {title}
           </h3>
         </div>
@@ -56,7 +57,7 @@ export default function Accordion({
           id={panelId}
           role="region"
           aria-labelledby={buttonId}
-          className="border-t border-slate-100 p-3 sm:p-4 bg-slate-50/40 text-slate-700"
+          className="border-t border-slate-100 p-3 sm:p-4 bg-slate-50/40 text-slate-700 font-dmsans"
         >
           {children}
         </div>

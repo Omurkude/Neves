@@ -6,15 +6,17 @@ export default function FlavourSection({ selectedFlavourId, onSelectFlavour }) {
   return (
     <section id="flavours" className="mb-6 sm:mb-8 scroll-mt-20">
       <div className="mb-3 sm:mb-4">
-        <h2 className="text-xl sm:text-2xl font-black text-[#0B192C] tracking-tight">
+        {/* Modern Heading using Outfit */}
+        <h2 className="text-xl sm:text-2xl font-outfit font-extrabold text-[#0B192C] tracking-tight">
           Our Flavours
         </h2>
-        <p className="mt-0.5 sm:mt-1 text-xs sm:text-sm text-slate-500 font-normal">
+        {/* Subtitle using Nunito Sans */}
+        <p className="mt-0.5 sm:mt-1 text-xs sm:text-sm font-nunito text-slate-500 font-medium">
           Choose a flavour to view its details below.
         </p>
       </div>
 
-      {/* 3 Flavour Cards in 1 Row matching the screenshot */}
+      {/* 3 Flavour Cards in 1 Row */}
       <div className="grid grid-cols-3 gap-2 sm:gap-3.5 md:gap-4">
         {flavours.map((item) => (
           <FlavourCard

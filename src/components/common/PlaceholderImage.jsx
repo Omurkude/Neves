@@ -2,7 +2,6 @@ import React from 'react';
 
 /**
  * Authentic brand assets and statutory document mockups for NEVE.
- * Uses bold and punchy typography for the "COOL" badge.
  */
 export default function PlaceholderImage({
   type = 'logo',
@@ -10,12 +9,14 @@ export default function PlaceholderImage({
 }) {
   if (type === 'logo') {
     return (
-      <div className={`flex items-center gap-1.5 select-none ${className}`}>
-        {/* Crisp Dynamic NEVE Brand Logo matching reference */}
-        <span className="font-poppins font-black italic tracking-tighter text-2xl sm:text-3xl text-[#E63946] leading-none">
-          NEVE
-        </span>
-        <span className="text-[10px] sm:text-xs font-outfit font-extrabold tracking-wider text-white bg-[#1D4ED8] px-1.5 py-0.5 rounded shadow-2xs">
+      <div className={`flex items-center gap-2 select-none ${className}`}>
+        {/* Blue Shield Badge matching the bottle label */}
+        <div className="bg-[#1D4ED8] px-2.5 py-1 rounded-md shadow-2xs border border-blue-800 flex items-center justify-center">
+          <span className="text-xl sm:text-2xl font-black tracking-wider text-white leading-none font-sans">
+            NEVE
+          </span>
+        </div>
+        <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#E63946] border-l border-slate-300 pl-2">
           COOL
         </span>
       </div>
@@ -42,15 +43,15 @@ export default function PlaceholderImage({
 
           {/* Central Government Header */}
           <div className="text-center px-1">
-            <p className="font-bold text-[9px] sm:text-[10px] leading-tight text-slate-900 font-outfit">
-              Food Safety and Standards<br />Authority of India
+            <p className="font-bold text-[9px] sm:text-[10px] leading-tight text-slate-900">
+              Government of Maharashtra<br />Food And Drug Administration
             </p>
-            <p className="text-[8px] sm:text-[9px] font-semibold text-slate-600 mt-0.5 font-outfit">
-              Food Business Licence
+            <p className="text-[8px] sm:text-[9px] font-semibold text-slate-600 mt-0.5">
+              Food Safety and Standards Authority of India (Form C)
             </p>
           </div>
 
-          {/* National Emblem Crest Placeholder */}
+          {/* FDA Emblem Crest Placeholder */}
           <div className="w-6 h-7 flex items-center justify-center text-slate-700">
             <svg viewBox="0 0 24 28" className="w-5 h-6" fill="currentColor">
               <path d="M12 2 L14 7 L19 7 L15 11 L17 16 L12 13 L7 16 L9 11 L5 7 L10 7 Z" />
@@ -61,33 +62,33 @@ export default function PlaceholderImage({
         </div>
 
         {/* Certificate Details Grid */}
-        <div className="relative z-10 grid grid-cols-12 gap-2 my-2 font-inter">
+        <div className="relative z-10 grid grid-cols-12 gap-2 my-2">
           {/* Left Data Column */}
           <div className="col-span-8 space-y-1 text-[9px] sm:text-[10px] leading-snug">
             <div>
-              <span className="text-slate-500">Licence No.</span>
-              <p className="font-mono font-bold text-slate-900">100XXXXXXXXXXXXXXXX</p>
+              <span className="text-slate-500">License Number:</span>
+              <p className="font-mono font-bold text-slate-900">11525058000154</p>
             </div>
             <div>
-              <span className="text-slate-500">Name of Business</span>
-              <p className="font-semibold text-slate-900">NEVE Beverages Pvt. Ltd.</p>
+              <span className="text-slate-500">Name of Licensee:</span>
+              <p className="font-semibold text-slate-900">JAGESHVAR MAHADEV BANGAR</p>
             </div>
             <div>
-              <span className="text-slate-500">Address</span>
-              <p className="text-slate-700 leading-tight">Plot No. 12, Industrial Area, Phase II, [City, State - PIN Placeholder]</p>
+              <span className="text-slate-500">Address of Premises:</span>
+              <p className="text-slate-700 leading-tight">GAT NO.191/1/B/6 ASHOK NAGAR TAH. DIST. BHANDARA MH-441906</p>
             </div>
             <div>
-              <span className="text-slate-500">Kind of Business</span>
-              <p className="text-slate-800">Manufacturer (Non-Alcoholic Beverages)</p>
+              <span className="text-slate-500">Kind of Business:</span>
+              <p className="text-slate-800">Manufacturer - General Manufacturing</p>
             </div>
-            <div className="flex gap-4">
+            <div className="flex gap-4 pt-0.5">
               <div>
-                <span className="text-slate-500">Date of Issue</span>
-                <p className="text-slate-800">[Issue Date]</p>
+                <span className="text-slate-500">Issued On:</span>
+                <p className="text-slate-800 font-medium">10-11-2025</p>
               </div>
               <div>
-                <span className="text-slate-500">Valid Upto</span>
-                <p className="text-slate-800 font-medium">[Validity Date]</p>
+                <span className="text-slate-500">Valid Upto:</span>
+                <p className="text-emerald-700 font-bold">09-11-2028</p>
               </div>
             </div>
           </div>
@@ -103,18 +104,16 @@ export default function PlaceholderImage({
 
             {/* Signature Area */}
             <div className="text-center mt-2">
-              <svg viewBox="0 0 60 16" className="w-12 h-3 mx-auto text-slate-700" fill="none">
-                <path d="M2 12 Q 15 2, 28 10 T 55 4" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
-              </svg>
+              <div className="inline-block text-emerald-600 font-bold text-[10px] leading-none mb-0.5">✓ Verified</div>
               <p className="text-[8px] font-bold text-slate-700 leading-tight">Designated Officer</p>
-              <p className="text-[7px] text-slate-500">FSSAI</p>
+              <p className="text-[7px] text-slate-500">Bhandara (FDA MH)</p>
             </div>
           </div>
         </div>
 
         {/* Disclaimer Note at Bottom */}
-        <div className="relative z-10 pt-1.5 border-t border-slate-200 text-[8px] text-slate-500 text-center font-dmsans">
-          This is a system generated licence and does not require signature.
+        <div className="relative z-10 pt-1.5 border-t border-slate-200 text-[8px] text-slate-500 text-center">
+          This is a computer generated license and does not require any signature or stamp by authority.
         </div>
       </div>
     );

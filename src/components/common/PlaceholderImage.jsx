@@ -2,6 +2,7 @@ import React from 'react';
 
 /**
  * Authentic brand assets and statutory document mockups for NEVE.
+ * Uses bold and punchy typography for the "COOL" badge.
  */
 export default function PlaceholderImage({
   type = 'logo',
@@ -10,11 +11,12 @@ export default function PlaceholderImage({
   if (type === 'logo') {
     return (
       <div className={`flex items-center gap-2 select-none ${className}`}>
-        {/* Retro Cola Script Logo using Lobster */}
+        {/* Retro Cola Brand Script */}
         <span className="font-lobster text-3xl sm:text-4xl text-[#E63946] tracking-wide leading-none">
           Neve
         </span>
-        <span className="text-[10px] font-outfit font-extrabold uppercase tracking-widest text-white bg-[#1D4ED8] px-2 py-0.5 rounded shadow-2xs">
+        {/* Bold & Punchy "COOL" badge using Bangers / Bowlby One */}
+        <span className="font-bangers tracking-widest text-xs sm:text-sm text-white bg-[#1D4ED8] px-2 py-0.5 rounded shadow-2xs">
           COOL
         </span>
       </div>
@@ -41,10 +43,10 @@ export default function PlaceholderImage({
 
           {/* Central Government Header */}
           <div className="text-center px-1">
-            <p className="font-bold text-[9px] sm:text-[10px] leading-tight text-slate-900">
+            <p className="font-bold text-[9px] sm:text-[10px] leading-tight text-slate-900 font-outfit">
               Food Safety and Standards<br />Authority of India
             </p>
-            <p className="text-[8px] sm:text-[9px] font-semibold text-slate-600 mt-0.5">
+            <p className="text-[8px] sm:text-[9px] font-semibold text-slate-600 mt-0.5 font-outfit">
               Food Business Licence
             </p>
           </div>
@@ -60,7 +62,7 @@ export default function PlaceholderImage({
         </div>
 
         {/* Certificate Details Grid */}
-        <div className="relative z-10 grid grid-cols-12 gap-2 my-2">
+        <div className="relative z-10 grid grid-cols-12 gap-2 my-2 font-inter">
           {/* Left Data Column */}
           <div className="col-span-8 space-y-1 text-[9px] sm:text-[10px] leading-snug">
             <div>
@@ -112,7 +114,7 @@ export default function PlaceholderImage({
         </div>
 
         {/* Disclaimer Note at Bottom */}
-        <div className="relative z-10 pt-1.5 border-t border-slate-200 text-[8px] text-slate-500 text-center">
+        <div className="relative z-10 pt-1.5 border-t border-slate-200 text-[8px] text-slate-500 text-center font-dmsans">
           This is a system generated licence and does not require signature.
         </div>
       </div>

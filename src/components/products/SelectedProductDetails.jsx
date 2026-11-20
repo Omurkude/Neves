@@ -19,12 +19,12 @@ export default function SelectedProductDetails({ flavour }) {
               Selected Product Details
             </span>
           </div>
-          <span className="text-sm font-lobster text-[#0B192C] tracking-wide truncate ml-2">
+          <span className="text-sm font-lilita text-[#0B192C] tracking-wide truncate ml-2">
             {variant || name}
           </span>
         </div>
 
-        {/* Product Meta: Properly Centered, Uncropped Bottle Photo + Retro Cola Typography */}
+        {/* Product Meta: Centered Bottle Photo + Titan One Bubbly Bold Heading */}
         <div className="grid grid-cols-1 sm:grid-cols-12 gap-5 sm:gap-6 items-center">
           {/* Bottle Visual Box - Perfectly centered, uncropped object-contain showing entire cap and splash */}
           <div className="sm:col-span-5 flex justify-center items-center">
@@ -37,11 +37,11 @@ export default function SelectedProductDetails({ flavour }) {
             </div>
           </div>
 
-          {/* Description & Quick Specs - Retro Cola styled headings */}
+          {/* Description & Quick Specs */}
           <div className="sm:col-span-7 space-y-3 text-center sm:text-left">
             <div>
-              {/* Product Heading using Lobster - bold classic cola script */}
-              <h3 className="text-2xl sm:text-3xl md:text-4xl font-lobster text-[#0B192C] tracking-wide leading-tight">
+              {/* Product Heading using Titan One - Rounded, Bubbly, and Bold */}
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-titan text-[#0B192C] tracking-wide leading-tight">
                 {variant || name}
               </h3>
               
@@ -70,11 +70,11 @@ export default function SelectedProductDetails({ flavour }) {
           </div>
         </div>
 
-        {/* Ingredients & Nutrition Breakdown with Curvy Stylish Headers */}
+        {/* Ingredients & Nutrition Breakdown with Bowlby One / Lilita One Headers */}
         <div className="mt-6 pt-5 border-t border-slate-100 grid grid-cols-1 sm:grid-cols-2 gap-4">
           {/* Ingredients */}
           <div className="p-3.5 rounded-xl bg-slate-50/70 border border-slate-200/70 text-left font-inter">
-            <h4 className="text-sm font-sansita font-bold text-[#0B192C] tracking-wide mb-2 flex items-center gap-1.5">
+            <h4 className="text-xs font-lilita text-[#0B192C] tracking-wider uppercase mb-2 flex items-center gap-1.5">
               <span>Key Ingredients</span>
             </h4>
             <ul className="space-y-1 text-xs text-slate-600 mb-3">
@@ -94,7 +94,7 @@ export default function SelectedProductDetails({ flavour }) {
           {/* Nutrition Summary */}
           <div className="p-3.5 rounded-xl bg-slate-50/70 border border-slate-200/70 text-left font-inter">
             <div className="flex items-center justify-between mb-2">
-              <h4 className="text-sm font-sansita font-bold text-[#0B192C] tracking-wide">
+              <h4 className="text-xs font-lilita text-[#0B192C] tracking-wider uppercase">
                 Nutrition Facts
               </h4>
               <span className="text-[10px] font-nunito text-slate-500 font-medium">Per 250ml</span>

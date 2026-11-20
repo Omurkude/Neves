@@ -6,8 +6,8 @@ export default function FlavourSection({ selectedFlavourId, onSelectFlavour }) {
   return (
     <section id="flavours" className="mb-6 sm:mb-8 scroll-mt-20">
       <div className="mb-3 sm:mb-4">
-        {/* Curvy & Stylish Heading using Sansita Swashed */}
-        <h2 className="text-2xl sm:text-3xl font-sansita font-bold text-[#0B192C] tracking-wide">
+        {/* Heavy and Eye-Catching Heading using Bowlby One */}
+        <h2 className="text-2xl sm:text-3xl font-bowlby text-[#0B192C] tracking-tight">
           Our Flavours
         </h2>
         {/* Subtitle using DM Sans */}

@@ -1,6 +1,12 @@
 @import "tailwindcss";
 
 @theme {
+  /* Bold and Punchy (best for "COOL" and big headings) */
+  --font-lilita: 'Lilita One', cursive, sans-serif;
+  --font-bangers: 'Bangers', cursive, sans-serif;
+  --font-bowlby: 'Bowlby One', cursive, sans-serif;
+  --font-titan: 'Titan One', cursive, sans-serif;
+
   /* Retro Cola Fonts */
   --font-pacifico: 'Pacifico', cursive;
   --font-lobster: 'Lobster', cursive;
@@ -9,7 +15,6 @@
 
   /* Modern & Supporting Fonts */
   --font-bebas: 'Bebas Neue', cursive, sans-serif;
-  --font-lilita: 'Lilita One', cursive, sans-serif;
   --font-poppins: 'Poppins', sans-serif;
   --font-outfit: 'Outfit', sans-serif;
   --font-baloo: 'Baloo 2', cursive, sans-serif;

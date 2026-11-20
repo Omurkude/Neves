@@ -39,8 +39,8 @@ export default function FlavourCard({
         />
       </div>
 
-      {/* Flavour Name using Lobster (Bold Classic Cola Script) */}
-      <h3 className="mt-2 text-sm sm:text-base md:text-lg font-lobster text-[#0B192C] tracking-wide leading-snug">
+      {/* Flavour Name using Lilita One (Chunky and Fun, Classic Soda Look) */}
+      <h3 className="mt-2 text-sm sm:text-base md:text-lg font-lilita text-[#0B192C] tracking-wide leading-snug">
         {name}
       </h3>
 

@@ -1,10 +1,9 @@
 import React from 'react';
-import PlaceholderImage from '../common/PlaceholderImage.jsx';
 
 export default function SelectedProductDetails({ flavour }) {
   if (!flavour) return null;
 
-  const { name, description, theme, specs, ingredients, allergens, nutrition } = flavour;
+  const { name, variant, description, theme, specs, ingredients, allergens, nutrition, image } = flavour;
 
   return (
     <div id="selected-product" className="mb-6 sm:mb-8 scroll-mt-20">
@@ -16,30 +15,29 @@ export default function SelectedProductDetails({ flavour }) {
             style={{ backgroundColor: theme.accentColor }}
           />
           <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-500">
-            Selected Flavour Details
+            Selected Product Details
           </span>
           <span className="ml-auto text-xs font-extrabold text-[#0B192C]">
-            {name}
+            {variant || name}
           </span>
         </div>
 
-        {/* Product Meta: Bottle Preview + Name & Description */}
+        {/* Product Meta: Real Bottle Photo + Name & Description */}
         <div className="grid grid-cols-1 sm:grid-cols-12 gap-4 sm:gap-6 items-center">
           {/* Bottle Visual Box */}
-          <div className={`sm:col-span-4 rounded-xl ${theme.pastelBg} p-3 flex items-center justify-center border ${theme.cardBorder}`}>
-            <PlaceholderImage
-              type="bottle"
-              flavour={theme.id}
-              className="max-h-48 sm:max-h-56"
-              title={`${name} bottle`}
+          <div className="sm:col-span-5 rounded-xl overflow-hidden shadow-2xs flex items-center justify-center bg-slate-900/5 aspect-[3/4] max-h-64 sm:max-h-72">
+            <img
+              src={image}
+              alt={`${name} bottle`}
+              className="w-full h-full object-cover"
             />
           </div>
 
           {/* Description & Quick Specs */}
-          <div className="sm:col-span-8 space-y-3">
+          <div className="sm:col-span-7 space-y-3">
             <div>
               <h3 className="text-xl sm:text-2xl font-black text-[#0B192C] tracking-tight">
-                {name}
+                {variant || name}
               </h3>
               <p className="mt-1.5 text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
                 {description}
@@ -53,8 +51,8 @@ export default function SelectedProductDetails({ flavour }) {
                 <span className="font-bold text-[#0B192C]">{specs.volume}</span>
               </div>
               <div className="p-2.5 rounded-lg bg-slate-50 border border-slate-200/70">
-                <span className="block font-semibold text-slate-400 text-[10px] uppercase">Shelf Life</span>
-                <span className="font-bold text-[#0B192C]">6 Months</span>
+                <span className="block font-semibold text-slate-400 text-[10px] uppercase">Packaging</span>
+                <span className="font-bold text-[#0B192C]">{specs.packaging}</span>
               </div>
             </div>
           </div>

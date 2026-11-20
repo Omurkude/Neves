@@ -22,8 +22,8 @@ import SupportSection from '../components/details/SupportSection.jsx';
 import flavours from '../data/flavours.js';
 
 export default function Home() {
-  // State for selected flavour (defaults to 'classic-cola')
-  const [selectedFlavourId, setSelectedFlavourId] = useState('classic-cola');
+  // State for selected flavour (defaults to the first flavour, Jeera Soda)
+  const [selectedFlavourId, setSelectedFlavourId] = useState(flavours[0]?.id || 'jeera-soda');
 
   // State for accordions: FSSAI is open by default as in the reference screenshot
   const [openSections, setOpenSections] = useState({

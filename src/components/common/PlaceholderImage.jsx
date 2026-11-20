@@ -1,28 +1,24 @@
 import React from 'react';
 
 /**
- * High-fidelity vector illustrations crafted to closely match the reference screenshot.
- * Features realistic glass bottles, the NEVE logo, and an authentic FSSAI licence document.
+ * Authentic brand assets and statutory document mockups for NEVE.
  */
 export default function PlaceholderImage({
-  type = 'bottle',
-  flavour = 'classic',
+  type = 'logo',
   className = '',
-  title = ''
 }) {
   if (type === 'logo') {
     return (
-      <div className={`flex flex-col select-none ${className}`}>
-        <div className="flex items-center">
-          <span className="text-2xl sm:text-3xl font-black italic tracking-tighter text-[#E63946] leading-none">
+      <div className={`flex items-center gap-2 select-none ${className}`}>
+        {/* Blue Shield Badge matching the bottle label */}
+        <div className="bg-[#1D4ED8] px-2.5 py-1 rounded-md shadow-2xs border border-blue-800 flex items-center justify-center">
+          <span className="text-xl sm:text-2xl font-black tracking-wider text-white leading-none font-sans">
             NEVE
           </span>
-          <span className="w-1.5 h-1.5 rounded-full bg-[#0B192C] ml-0.5 mt-1" />
         </div>
-        {/* Dynamic Curved Swoosh matching the beverage brand reference */}
-        <svg className="w-14 sm:w-16 h-2 -mt-0.5 text-[#E63946]" viewBox="0 0 60 7" fill="none">
-          <path d="M0 2 Q 18 7, 34 3 T 60 2" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" />
-        </svg>
+        <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#E63946] border-l border-slate-300 pl-2">
+          COOL
+        </span>
       </div>
     );
   }
@@ -99,7 +95,7 @@ export default function PlaceholderImage({
 
           {/* Right Column: QR Code + Officer Signature */}
           <div className="col-span-4 flex flex-col items-center justify-between pl-1 border-l border-slate-100">
-            {/* QR Code Placeholder */}
+            {/* QR Code Graphic */}
             <div className="w-14 h-14 sm:w-16 sm:h-16 p-1 bg-white border border-slate-300 rounded shadow-2xs flex items-center justify-center">
               <svg viewBox="0 0 24 24" className="w-full h-full text-slate-900" fill="currentColor">
                 <path d="M2 2h8v8H2V2zm2 2v4h4V4H4zm10-2h8v8h-8V2zm2 2v4h4V4h-4zM2 14h8v8H2v-8zm2 2v4h4v-4H4zm13-2h3v3h-3v-3zm0 5h3v3h-3v-3zm-3-5h2v2h-2v-2zm0 4h2v4h-2v-4zm5-2h2v4h-2v-4zM5 5h2v2H5V5zm12 0h2v2h-2V5zM5 17h2v2H5v-2z" />
@@ -125,128 +121,5 @@ export default function PlaceholderImage({
     );
   }
 
-  // Realistic Glass Beverage Bottle Vector
-  const bottleConfigs = {
-    classic: {
-      liquidColor: '#300C0C',
-      liquidGradient: ['#4A1212', '#2A0808'],
-      capColor: '#E63946',
-      labelColor: '#E63946',
-      labelTitle: 'NEVE',
-      labelSubtitle: 'CLASSIC'
-    },
-    lime: {
-      liquidColor: '#16A34A',
-      liquidGradient: ['#22C55E', '#15803D'],
-      capColor: '#16A34A',
-      labelColor: '#15803D',
-      labelTitle: 'NEVE',
-      labelSubtitle: 'LIME'
-    },
-    orange: {
-      liquidColor: '#EA580C',
-      liquidGradient: ['#FB923C', '#C2410C'],
-      capColor: '#EA580C',
-      labelColor: '#C2410C',
-      labelTitle: 'NEVE',
-      labelSubtitle: 'ORANGE'
-    }
-  };
-
-  const cfg = bottleConfigs[flavour] || bottleConfigs.classic;
-
-  return (
-    <div className={`relative flex items-center justify-center select-none ${className}`}>
-      <svg
-        viewBox="0 0 100 240"
-        className="w-full h-full max-h-44 sm:max-h-52 object-contain drop-shadow-sm filter"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        aria-label={title || `${flavour} bottle`}
-      >
-        <defs>
-          {/* Liquid Gradient */}
-          <linearGradient id={`liquid-${flavour}`} x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor={cfg.liquidGradient[0]} />
-            <stop offset="35%" stopColor={cfg.liquidGradient[0]} />
-            <stop offset="70%" stopColor={cfg.liquidGradient[1]} />
-            <stop offset="100%" stopColor={cfg.liquidColor} />
-          </linearGradient>
-
-          {/* Glass Highlight */}
-          <linearGradient id={`shine-${flavour}`} x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.5" />
-            <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0" />
-          </linearGradient>
-
-          {/* Cap Metallic Tone */}
-          <linearGradient id={`cap-${flavour}`} x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor={cfg.capColor} />
-            <stop offset="50%" stopColor="#FFFFFF" stopOpacity="0.4" />
-            <stop offset="100%" stopColor={cfg.capColor} />
-          </linearGradient>
-        </defs>
-
-        {/* Crown Bottle Cap with Fluting */}
-        <path d="M41 12 L59 12 L58 22 L42 22 Z" fill={`url(#cap-${flavour})`} stroke="#1E293B" strokeWidth="0.8" />
-        <line x1="44" y1="12" x2="44" y2="22" stroke="#FFFFFF" strokeWidth="0.5" strokeOpacity="0.6" />
-        <line x1="48" y1="12" x2="48" y2="22" stroke="#FFFFFF" strokeWidth="0.5" strokeOpacity="0.6" />
-        <line x1="52" y1="12" x2="52" y2="22" stroke="#FFFFFF" strokeWidth="0.5" strokeOpacity="0.6" />
-        <line x1="56" y1="12" x2="56" y2="22" stroke="#FFFFFF" strokeWidth="0.5" strokeOpacity="0.6" />
-
-        {/* Glass Bottle Lip & Ring */}
-        <rect x="42" y="22" width="16" height="4" rx="2" fill="#E2E8F0" fillOpacity="0.8" stroke="#94A3B8" strokeWidth="0.5" />
-
-        {/* Bottle Neck */}
-        <path d="M43 26 L39 65 L61 65 L57 26 Z" fill={`url(#liquid-${flavour})`} />
-
-        {/* Bottle Body & Curved Shoulder */}
-        <path
-          d="M39 65 C26 76 22 96 22 118 L22 208 C22 220 28 225 36 225 L64 225 C72 225 78 220 78 208 L78 118 C78 96 74 76 61 65 Z"
-          fill={`url(#liquid-${flavour})`}
-          stroke="#475569"
-          strokeWidth="0.6"
-        />
-
-        {/* Glass Specular Reflection on Shoulder & Body */}
-        <path d="M28 85 Q32 150 28 210" stroke={`url(#shine-${flavour})`} strokeWidth="3" strokeLinecap="round" />
-        <path d="M45 32 L44 60" stroke="#FFFFFF" strokeWidth="1.5" strokeOpacity="0.35" strokeLinecap="round" />
-
-        {/* Waist Label Band */}
-        <rect x="22" y="112" width="56" height="48" rx="2" fill={cfg.labelColor} stroke="#FFFFFF" strokeWidth="0.8" />
-
-        {/* NEVE Brand Label Typography */}
-        <text
-          x="50"
-          y="132"
-          textAnchor="middle"
-          fill="#FFFFFF"
-          fontSize="13"
-          fontWeight="900"
-          letterSpacing="0.8"
-          fontStyle="italic"
-          fontFamily="sans-serif"
-        >
-          {cfg.labelTitle}
-        </text>
-
-        {/* Flavour Subtitle on Label */}
-        <text
-          x="50"
-          y="146"
-          textAnchor="middle"
-          fill="#FFFFFF"
-          fontSize="7"
-          fontWeight="800"
-          letterSpacing="1"
-          fontFamily="sans-serif"
-        >
-          {cfg.labelSubtitle}
-        </text>
-
-        {/* Glass Base */}
-        <ellipse cx="50" cy="225" rx="20" ry="3.5" fill="#0F172A" fillOpacity="0.8" />
-      </svg>
-    </div>
-  );
+  return null;
 }

@@ -1,13 +1,12 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
-import PlaceholderImage from '../common/PlaceholderImage.jsx';
 
 export default function FlavourCard({
   flavour,
   isSelected = false,
   onSelect
 }) {
-  const { id, name, tagline, theme } = flavour;
+  const { id, name, tagline, theme, image } = flavour;
 
   return (
     <div
@@ -22,7 +21,7 @@ export default function FlavourCard({
       }}
       aria-pressed={isSelected}
       aria-label={`Select ${name} to view details`}
-      className={`group relative flex flex-col items-center justify-between rounded-2xl p-3 sm:p-4 transition-all duration-200 cursor-pointer text-center border ${
+      className={`group relative flex flex-col items-center justify-between rounded-2xl p-2.5 sm:p-3.5 transition-all duration-200 cursor-pointer text-center border ${
         theme.pastelBg
       } ${
         isSelected
@@ -30,13 +29,13 @@ export default function FlavourCard({
           : `${theme.cardBorder} hover:border-slate-300 shadow-2xs`
       }`}
     >
-      {/* Bottle Illustration in Center */}
-      <div className="w-full py-1 sm:py-2 flex items-center justify-center">
-        <PlaceholderImage
-          type="bottle"
-          flavour={theme.id}
-          className="transition-transform duration-300 group-hover:scale-105"
-          title={`${name} bottle`}
+      {/* Real Product Bottle Image */}
+      <div className="w-full aspect-[2/3] max-h-40 sm:max-h-52 md:max-h-56 rounded-xl overflow-hidden shadow-2xs flex items-center justify-center bg-slate-900/5">
+        <img
+          src={image}
+          alt={`${name} bottle`}
+          loading="lazy"
+          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
         />
       </div>
 
@@ -46,12 +45,12 @@ export default function FlavourCard({
       </h3>
 
       {/* Flavour Tagline */}
-      <p className="mt-1 text-[10px] sm:text-xs text-slate-500 font-normal leading-tight min-h-[28px] sm:min-h-[32px] flex items-center justify-center">
+      <p className="mt-0.5 sm:mt-1 text-[10px] sm:text-xs text-slate-500 font-normal leading-tight min-h-[26px] sm:min-h-[30px] flex items-center justify-center">
         {tagline}
       </p>
 
       {/* Circular Arrow Button */}
-      <div className="mt-2.5 sm:mt-3 mb-1">
+      <div className="mt-2 sm:mt-2.5 mb-0.5">
         <button
           type="button"
           tabIndex={-1}

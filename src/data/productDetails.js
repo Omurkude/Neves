@@ -1,22 +1,27 @@
 /**
- * NEVE Regulatory, Manufacturing & Customer Information
- * Authentic FSSAI Licence & Manufacturing Details
+ * NEVE Regulatory, Manufacturing & Product Label Information
+ * Sourced directly from official Saheb Sultan Industries Product Label
+ * and FSSAI License No. 11525058000154 (FDA Maharashtra)
  */
 export const productDetails = {
   brand: {
-    name: 'NEVE',
-    legalName: 'JAGESHVAR MAHADEV BANGAR (NEVE Beverages)',
-    tagline: 'Pure Refreshment.'
+    name: 'NEVE COOL',
+    fullName: "SAHEB SULTAN'S NEVE COOL",
+    unitName: 'Saheb Sultan Industries',
+    manufacturer: 'J M BANGAR',
+    tagline: 'Unleash the power of Refreshment..!'
   },
 
   fssai: {
     title: 'FSSAI & Regulatory Details',
     licenceNumber: '11525058000154',
     nameOfBusiness: 'JAGESHVAR MAHADEV BANGAR',
-    tradeName: 'NEVE Beverages',
-    address: 'GAT NO.191/1/B/6 ASHOK NAGAR TAH. DIST. BHANDARA MH-441906, Bhandara, Maharashtra-441906',
-    shortAddress: 'Ashoknagar, Plot No. 191/1/B/6, Tah. Dist. Bhandara, Maharashtra - 441906',
+    unitName: 'Saheb Sultan Industries',
+    tradeName: "SAHEB SULTAN'S NEVE COOL",
+    address: 'GAT NO.191/1/B/6 ASHOK NAGAR TAH. DIST. BHANDARA MH-441906, Bhandara, Maharashtra - 441906',
+    shortAddress: 'Plot No. 191/1/B/6, Ashok Nagar, T.D. Bhandara, Maharashtra',
     foodCategory: '14 - Beverages, excluding dairy products (14.1 - Non-alcoholic ("soft") beverages / Carbonated Water [14.1.4.1])',
+    productCategory: 'Sweetened Carbonated Beverages',
     kindOfBusiness: 'Manufacturer - General Manufacturing',
     categoryOfLicense: 'State License (Government of Maharashtra - FDA)',
     dateOfIssue: '10-11-2025',
@@ -24,64 +29,84 @@ export const productDetails = {
     place: 'Bhandara',
     state: 'Maharashtra',
     contactNumber: '+91 70209 06373',
-    email: 'pariwartankaryalay@gmail.com',
+    email: 'pariwartan74@gmail.com',
     disclaimer: 'This is a computer generated license and does not require any signature or stamp by authority.'
   },
 
   ingredientsInfo: {
     title: 'Ingredients & Allergen Information',
-    items: [
-      { name: 'Carbonated Water', role: 'Treated, purified sparkling water foundation' },
-      { name: 'Sugar', role: 'Pure refined cane sugar for clean sweetness' },
-      { name: 'Acidity Regulators (INS 330, INS 338)', role: 'Balanced tartness and crisp effervescence' },
-      { name: 'Natural Colour & Flavouring Substances', role: 'Authentic extracts and nature-identical essences' },
-      { name: 'Permitted Preservatives (INS 211)', role: 'Food-grade freshness and stability' }
+    category: 'SWEETENED CARBONATED BEVERAGES',
+    description: 'Crafted with purified treated water, pure cane sugar, effervescent sparkling carbonation, natural salt, and balanced acidity regulators.',
+    rawLabelText: 'Treated Water, Sugar, Co2, Natural Salt, Malic-Fumaric Acid, Stabilising Agents.',
+    rawDeclarationsText: 'Contains : Class II Preservate (211), Synthetic Food Colors (E-102, D-110) No Fruit Added.',
+    baseIngredients: [
+      { name: 'Treated Water', purpose: 'Multi-stage purified sparkling water foundation' },
+      { name: 'Sugar', purpose: 'Pure cane sweetness (9g per 100ml)' },
+      { name: 'Carbon Dioxide (Co2)', purpose: 'Effervescent fizz & sparkling carbonation' },
+      { name: 'Natural Salt', purpose: 'Electrolyte balance & crisp refreshing taste' },
+      { name: 'Malic-Fumaric Acid', purpose: 'Acidity regulators for balanced tartness' },
+      { name: 'Stabilising Agents', purpose: 'Smooth emulsion & texture consistency' },
+      { name: 'Class II Preservative (211)', purpose: 'Sodium Benzoate for freshness preservation' },
+      { name: 'Synthetic Food Colors (E-102, D-110)', purpose: 'Permitted food-grade coloring (Tartrazine & Sunset Yellow)' }
     ],
-    allergenNotice: 'Contains no common allergens (Gluten-free, Nut-free, Dairy-free, 100% Vegan).'
+    declarations: [
+      'Contains Class II Preservative (211)',
+      'Contains Synthetic Food Colors (E-102, D-110)',
+      'No Fruit Added'
+    ],
+    allergenNotice: '100% Vegetarian. Contains no common allergens (Gluten-free, Vegan, Nut-free, Dairy-free).'
   },
 
   nutritionInfo: {
     title: 'Nutrition Facts & Calories',
-    servingSize: '250 ml (1 bottle)',
+    servingSize: '200 ml (1 bottle)',
     servingsPerContainer: '1',
-    table: [
-      { metric: 'Energy', per100ml: '40 kcal', perServing: '100 kcal' },
-      { metric: 'Carbohydrates', per100ml: '10.0 g', perServing: '25.0 g' },
-      { metric: 'Total Sugars', per100ml: '9.8 g', perServing: '24.5 g' },
-      { metric: 'Added Sugars', per100ml: '9.2 g', perServing: '23.0 g' },
-      { metric: 'Protein', per100ml: '0.0 g', perServing: '0.0 g' },
-      { metric: 'Total Fat', per100ml: '0.0 g', perServing: '0.0 g' },
-      { metric: 'Sodium', per100ml: '24.0 mg', perServing: '60.0 mg' }
+    netQuantity: '200 ml',
+    mrp: 'Rs. 10/-',
+    rawApproxText: 'Energy: 32 Kcal, Carbohydrate: 8g, Sugar: 9g, Protein: 0g, Fat: 0g (Per 100ml Approx)',
+    generalTable: [
+      { nutrient: 'Energy', per100ml: '32 Kcal', perServing: '64 Kcal' },
+      { nutrient: 'Carbohydrate', per100ml: '8 g', perServing: '16 g' },
+      { nutrient: 'Sugar', per100ml: '9 g', perServing: '18 g' },
+      { nutrient: 'Protein', per100ml: '0 g', perServing: '0 g' },
+      { nutrient: 'Fat', per100ml: '0 g', perServing: '0 g' }
     ],
-    note: 'Approximate laboratory average values based on standard beverage batches.'
+    note: 'Values are approximate (Per 100ml) as declared on the official SAHEB SULTAN\'S NEVE COOL product label.'
   },
 
   manufacturingInfo: {
     title: 'Manufacturing Address',
-    manufacturedBy: 'JAGESHVAR MAHADEV BANGAR, GAT NO.191/1/B/6 ASHOK NAGAR TAH. DIST. BHANDARA MH-441906, Bhandara, Maharashtra - 441906',
-    marketedBy: 'NEVE Beverages, Ashoknagar Plot No. 191/1/B/6, Tah. Dist. Bhandara, Maharashtra - 441906',
-    contactNumber: '+91 70209 06373',
-    batchNotice: 'Batch Number, MFD Date, and Expiry Date are printed on the neck of the bottle.',
-    storageInstructions: 'Store in a clean, cool, and dry place away from direct sunlight. Best served chilled.'
+    manufacturedBy: 'J M BANGAR',
+    unitName: 'Saheb Sultan Industries',
+    address: 'Plot No. 191/1/B/6, Ashok Nagar, T.D. Bhandara, Maharashtra.',
+    customerCare: '7020906373',
+    email: 'pariwartan74@gmail.com',
+    netQuantity: '200 ml',
+    mrp: 'Rs. 10/- (Incl. of all taxes)',
+    batchNotice: 'Batch No. and Mfg. Date: SEE ON NECK / CAP',
+    shelfLife: 'Best Before 3 Months From The Date of Mfg.',
+    storageInstructions: 'Store in Cool & Dry Place. Keep Away From Direct Sun Light. Do not use if Seal is Broken. Serve Chilled.'
   },
 
   qualityInfo: {
     title: 'Quality Assurance Reports',
-    overview: 'NEVE products are manufactured under strict FSSAI sanitary and hygienic guidelines (Schedule-4).',
+    overview: 'NEVE COOL beverages are manufactured under strict sanitary standards in compliance with FSSAI Food Safety regulations (Schedule-4).',
     points: [
-      { title: 'Water Purification', description: 'Multi-stage filtration, reverse osmosis and UV sterilization.' },
-      { title: 'Microbiological Safety', description: 'Periodic testing of chemical and microbiological parameters.' },
-      { title: 'Quality Packaging', description: 'Certified food-grade PET bottles ensuring carbonation freshness.' }
+      { title: 'Treated Water Purification', detail: 'Multi-stage filtration, reverse osmosis and UV sterilization.' },
+      { title: 'Quality Sealed Packaging', detail: '200 ml food-grade PET bottles with tamper-evident seal maintaining carbonation.' },
+      { title: 'Regulatory Compliance', detail: 'Manufactured under State License No. 11525058000154 (FDA Maharashtra).' }
     ],
-    note: 'Manufactured under State License No. 11525058000154 (FDA Maharashtra).'
+    certifications: ['FSSAI State Licensed', 'Make in India', 'Recyclable PET', '100% Vegetarian'],
+    reportNotice: 'Manufactured by Saheb Sultan Industries under FSSAI License No. 11525058000154.'
   },
 
   supportInfo: {
     title: 'Brand & Customer Support',
-    description: 'For consumer feedback, inquiries, or trade inquiries, get in touch with our team:',
+    description: 'For consumer feedback, queries, or distributor inquiries, get in touch with our customer care:',
     helpline: '+91 70209 06373',
-    email: 'pariwartankaryalay@gmail.com',
-    address: 'Ashoknagar Plot No. 191/1/B/6, Tah. Dist. Bhandara, Maharashtra - 441906',
+    email: 'pariwartan74@gmail.com',
+    unitName: 'Saheb Sultan Industries',
+    address: 'Plot No. 191/1/B/6, Ashok Nagar, T.D. Bhandara, Maharashtra.',
     hours: 'Mon – Sat: 9:30 AM to 6:30 PM IST'
   }
 };

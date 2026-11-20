@@ -35,6 +35,8 @@ export default function Home() {
     support: false,
   });
 
+  const selectedFlavour = flavours.find((f) => f.id === selectedFlavourId) || flavours[0];
+
   const toggleSection = (key) => {
     setOpenSections((prev) => ({
       ...prev,
@@ -88,7 +90,7 @@ export default function Home() {
               isOpen={openSections.ingredients}
               onToggle={() => toggleSection('ingredients')}
             >
-              <IngredientsSection />
+              <IngredientsSection selectedFlavour={selectedFlavour} />
             </Accordion>
           </div>
 
@@ -101,7 +103,7 @@ export default function Home() {
               isOpen={openSections.nutrition}
               onToggle={() => toggleSection('nutrition')}
             >
-              <NutritionSection />
+              <NutritionSection selectedFlavour={selectedFlavour} />
             </Accordion>
           </div>
 

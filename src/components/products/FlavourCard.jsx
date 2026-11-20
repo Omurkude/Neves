@@ -21,7 +21,7 @@ export default function FlavourCard({
       }}
       aria-pressed={isSelected}
       aria-label={`Select ${name} to view details`}
-      className={`group relative flex flex-col items-center justify-between rounded-2xl p-2.5 sm:p-4 transition-all duration-200 cursor-pointer text-center border ${
+      className={`group relative flex flex-col items-center justify-between rounded-2xl p-2.5 sm:p-3.5 transition-all duration-200 cursor-pointer text-center border ${
         theme.pastelBg
       } ${
         isSelected
@@ -39,13 +39,13 @@ export default function FlavourCard({
         />
       </div>
 
-      {/* Flavour Name using Poppins (Clean, modern, bold sans) */}
-      <h3 className="mt-2 text-sm sm:text-base md:text-lg font-poppins font-bold text-[#0B192C] tracking-tight leading-snug">
+      {/* Flavour Name - Default Text Style */}
+      <h3 className="mt-2 text-xs sm:text-base font-extrabold text-[#0B192C] tracking-tight leading-snug">
         {name}
       </h3>
 
-      {/* Flavour Tagline using DM Sans (Clean, elegant, minimal) */}
-      <p className="mt-0.5 sm:mt-1 font-dmsans font-normal text-xs sm:text-sm text-slate-500 leading-snug min-h-[32px] sm:min-h-[36px] flex items-center justify-center text-center px-1">
+      {/* Flavour Tagline - Default Text Style */}
+      <p className="mt-0.5 sm:mt-1 text-[10px] sm:text-xs text-slate-500 font-normal leading-tight min-h-[26px] sm:min-h-[30px] flex items-center justify-center text-center px-1">
         {tagline}
       </p>
 

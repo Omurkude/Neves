@@ -51,7 +51,7 @@ export default function Navbar() {
       {isOpen && (
         <div id="mobile-menu" className="bg-white border-b border-slate-200 px-4 py-3 shadow-lg animate-in slide-in-from-top-1">
           <div className="max-w-3xl mx-auto">
-            <nav className="flex flex-col space-y-1 font-outfit">
+            <nav className="flex flex-col space-y-1">
               {navLinks.map((link) => (
                 <a
                   key={link.href}

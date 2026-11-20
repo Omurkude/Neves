@@ -6,12 +6,12 @@ export default function FlavourSection({ selectedFlavourId, onSelectFlavour }) {
   return (
     <section id="flavours" className="mb-6 sm:mb-8 scroll-mt-20">
       <div className="mb-3 sm:mb-4">
-        {/* Clean, Bold Heading matching reference screenshot */}
-        <h2 className="text-2xl sm:text-3xl font-poppins font-bold text-[#0B192C] tracking-tight">
+        {/* Clean, Default Heading matching earlier text style */}
+        <h2 className="text-xl sm:text-2xl font-black text-[#0B192C] tracking-tight">
           Our Flavours
         </h2>
         {/* Subtitle in clean regular sans */}
-        <p className="mt-0.5 sm:mt-1 text-xs sm:text-sm font-dmsans text-slate-500 font-normal">
+        <p className="mt-0.5 sm:mt-1 text-xs sm:text-sm text-slate-500 font-normal">
           Choose a flavour to view its details below.
         </p>
       </div>

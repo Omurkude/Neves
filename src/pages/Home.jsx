@@ -45,17 +45,17 @@ export default function Home() {
   const selectedFlavour = flavours.find((f) => f.id === selectedFlavourId) || flavours[0];
 
   return (
-    <div className="min-h-screen bg-white text-[#0B192C] flex flex-col font-dmsans selection:bg-[#E63946] selection:text-white">
+    <div className="min-h-screen bg-white text-[#0B192C] flex flex-col font-sans selection:bg-[#E63946] selection:text-white">
       {/* 1. Navbar with NEVE branding and hamburger menu */}
       <Navbar />
 
       <main className="flex-1 max-w-3xl w-full mx-auto px-4 sm:px-6 pt-6 sm:pt-8">
-        {/* 2. Hero Section: Clean, bold Poppins */}
+        {/* 2. Hero Section: Default clean text style */}
         <section className="mb-6 sm:mb-8 text-left">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-poppins font-bold text-[#0B192C] tracking-tight leading-tight">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#0B192C] tracking-tight">
             Your Product Details
           </h1>
-          <p className="mt-1.5 sm:mt-2 text-xs sm:text-sm md:text-base font-dmsans text-slate-500 leading-relaxed font-normal">
+          <p className="mt-1 sm:mt-2 text-xs sm:text-sm md:text-base text-slate-500 leading-relaxed font-normal">
             Discover everything about our products — ingredients, nutrition, manufacturing details and more.
           </p>
         </section>

@@ -9,17 +9,17 @@ export default function SelectedProductDetails({ flavour }) {
     <div id="selected-product" className="mb-6 sm:mb-8 scroll-mt-20">
       <div className="bg-white rounded-2xl border border-slate-200/80 shadow-2xs p-4 sm:p-6 transition-all duration-200">
         {/* Header bar */}
-        <div className="flex items-center justify-between mb-4 pb-3 border-b border-slate-100 font-dmsans">
+        <div className="flex items-center justify-between mb-4 pb-3 border-b border-slate-100">
           <div className="flex items-center gap-2">
             <span
               className="w-2.5 h-2.5 rounded-full shrink-0"
               style={{ backgroundColor: theme.accentColor }}
             />
-            <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-500 font-outfit">
+            <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-500">
               Selected Product Details
             </span>
           </div>
-          <span className="text-xs sm:text-sm font-poppins font-bold text-[#0B192C] tracking-tight truncate ml-2">
+          <span className="text-xs sm:text-sm font-extrabold text-[#0B192C] truncate ml-2">
             {variant || name}
           </span>
         </div>
@@ -40,13 +40,13 @@ export default function SelectedProductDetails({ flavour }) {
           {/* Meta & Descriptions */}
           <div className="sm:col-span-7 space-y-3 text-center sm:text-left">
             <div>
-              <h3 className="text-2xl sm:text-3xl font-poppins font-bold text-[#0B192C] tracking-tight leading-tight">
+              <h3 className="text-xl sm:text-2xl font-black text-[#0B192C] tracking-tight">
                 {variant || name}
               </h3>
-              <p className="mt-1 font-dmsans font-semibold text-xs sm:text-sm" style={{ color: theme.accentColor }}>
+              <p className="mt-1 font-semibold text-xs sm:text-sm" style={{ color: theme.accentColor }}>
                 "{tagline}"
               </p>
-              <p className="mt-2 text-xs sm:text-sm font-dmsans text-slate-600 leading-relaxed font-normal max-w-md mx-auto sm:mx-0">
+              <p className="mt-1.5 text-xs sm:text-sm text-slate-600 leading-relaxed font-normal max-w-md mx-auto sm:mx-0">
                 {description}
               </p>
             </div>
@@ -54,12 +54,12 @@ export default function SelectedProductDetails({ flavour }) {
             {/* Quick Specs Chips */}
             <div className="grid grid-cols-2 gap-2 pt-1 text-xs max-w-xs sm:max-w-none mx-auto sm:mx-0">
               <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200/70 text-center sm:text-left">
-                <span className="block font-outfit font-bold text-slate-400 text-[10px] uppercase">Net Volume</span>
-                <span className="font-poppins font-semibold text-[#0B192C] text-xs sm:text-sm">{specs.volume}</span>
+                <span className="block font-semibold text-slate-400 text-[10px] uppercase">Net Volume</span>
+                <span className="font-bold text-[#0B192C] text-xs sm:text-sm">{specs.volume}</span>
               </div>
               <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200/70 text-center sm:text-left">
-                <span className="block font-outfit font-bold text-slate-400 text-[10px] uppercase">Packaging</span>
-                <span className="font-poppins font-semibold text-[#0B192C] text-xs sm:text-sm">{specs.packaging}</span>
+                <span className="block font-semibold text-slate-400 text-[10px] uppercase">Packaging</span>
+                <span className="font-bold text-[#0B192C] text-xs sm:text-sm">{specs.packaging}</span>
               </div>
             </div>
           </div>
@@ -68,8 +68,8 @@ export default function SelectedProductDetails({ flavour }) {
         {/* Key Ingredients & Nutrition Overview */}
         <div className="mt-5 pt-4 border-t border-slate-100 grid grid-cols-1 sm:grid-cols-2 gap-3.5">
           {/* Key Ingredients */}
-          <div className="p-3.5 rounded-xl bg-slate-50/70 border border-slate-200/70 text-left font-dmsans">
-            <h4 className="text-xs font-poppins font-bold text-[#0B192C] tracking-wider uppercase mb-2">
+          <div className="p-3.5 rounded-xl bg-slate-50/70 border border-slate-200/70 text-left">
+            <h4 className="text-xs font-bold text-[#0B192C] tracking-wider uppercase mb-2">
               Key Ingredients
             </h4>
             <ul className="space-y-1 text-xs text-slate-600 mb-2.5">
@@ -87,12 +87,12 @@ export default function SelectedProductDetails({ flavour }) {
           </div>
 
           {/* Quick Nutrition */}
-          <div className="p-3.5 rounded-xl bg-slate-50/70 border border-slate-200/70 text-left font-dmsans">
+          <div className="p-3.5 rounded-xl bg-slate-50/70 border border-slate-200/70 text-left">
             <div className="flex items-center justify-between mb-2">
-              <h4 className="text-xs font-poppins font-bold text-[#0B192C] tracking-wider uppercase">
+              <h4 className="text-xs font-bold text-[#0B192C] tracking-wider uppercase">
                 Nutrition Summary
               </h4>
-              <span className="text-[10px] font-outfit text-slate-500 font-semibold">Per Serving</span>
+              <span className="text-[10px] text-slate-500 font-semibold">Per Serving</span>
             </div>
 
             <div className="overflow-x-auto rounded-lg border border-slate-200 bg-white">

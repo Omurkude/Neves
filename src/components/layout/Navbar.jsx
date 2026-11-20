@@ -8,6 +8,8 @@ export default function Navbar() {
   const navLinks = [
     { label: 'Our Flavours', href: '#flavours' },
     { label: 'FSSAI & Regulatory Details', href: '#fssai-section' },
+    { label: 'Ingredients & Allergen Information', href: '#ingredients-section' },
+    { label: 'Nutrition Facts & Calories', href: '#nutrition-section' },
     { label: 'Manufacturing Address', href: '#manufacturing-section' },
     { label: 'Quality Assurance Reports', href: '#quality-section' },
     { label: 'Brand & Customer Support', href: '#support-section' },

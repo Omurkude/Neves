@@ -1,14 +1,15 @@
 /**
  * NEVE Product Flavours Data
  * Authentic products: Jeera Soda, Lime Soda, Orange Flavour
+ * Sourced from official Saheb Sultan Industries product label
  */
 export const flavours = [
   {
     id: 'jeera-soda',
     name: 'Jeera Soda',
-    variant: 'NEVE Cool Jeera Soda',
+    variant: "SAHEB SULTAN'S NEVE COOL Jeera Soda",
     tagline: 'Spiced. Crisp. Refreshing.',
-    description: 'An authentic Indian spiced soda crafted with roasted cumin (jeera) extracts, black salt, and effervescent sparkling soda. Delivers a bold, digestive, refreshing fizz with every sip.',
+    description: 'An authentic Indian spiced soda crafted with purified treated water, roasted cumin (jeera) essence, natural salt, and effervescent sparkling soda.',
     image: '/images/flavours/jeera-soda.png',
     theme: {
       id: 'jeera',
@@ -19,35 +20,36 @@ export const flavours = [
       accentColor: '#E63946'
     },
     specs: {
-      volume: '250 ml / 300 ml',
-      packaging: 'Food-Grade PET Bottle',
-      shelfLife: 'Best before 6 months from manufacture'
+      volume: '200 ml',
+      mrp: 'Rs. 10/-',
+      packaging: '200 ml Food-Grade PET Bottle',
+      shelfLife: 'Best Before 3 Months From Date of Mfg.'
     },
     ingredients: [
-      'Carbonated Water',
-      'Sugar',
-      'Jeera (Cumin) Seed Extract',
-      'Black Salt',
-      'Acidity Regulators (INS 330, INS 338)',
-      'Natural & Nature-Identical Flavouring Substances'
+      'Treated Water',
+      'Sugar (9g / 100ml)',
+      'Carbon Dioxide (Co2)',
+      'Natural Salt',
+      'Malic-Fumaric Acid',
+      'Stabilising Agents',
+      'Class II Preservative (211)',
+      'Synthetic Food Colors (E-102, D-110)'
     ],
-    allergens: 'Contains no common allergens (Gluten-free, Vegan, Nut-free, Dairy-free).',
+    allergens: '100% Vegetarian. Contains no common allergens (Gluten-free, Vegan, Nut-free, Dairy-free).',
     nutrition: [
-      { metric: 'Energy', per100ml: '40 kcal', perServing: '100 kcal' },
-      { metric: 'Carbohydrates', per100ml: '10.0 g', perServing: '25.0 g' },
-      { metric: 'Total Sugars', per100ml: '9.8 g', perServing: '24.5 g' },
-      { metric: 'Added Sugars', per100ml: '9.2 g', perServing: '23.0 g' },
+      { metric: 'Energy', per100ml: '32 kcal', perServing: '64 kcal' },
+      { metric: 'Carbohydrates', per100ml: '8.0 g', perServing: '16.0 g' },
+      { metric: 'Sugar', per100ml: '9.0 g', perServing: '18.0 g' },
       { metric: 'Protein', per100ml: '0.0 g', perServing: '0.0 g' },
-      { metric: 'Total Fat', per100ml: '0.0 g', perServing: '0.0 g' },
-      { metric: 'Sodium', per100ml: '24.0 mg', perServing: '60.0 mg' }
+      { metric: 'Total Fat', per100ml: '0.0 g', perServing: '0.0 g' }
     ]
   },
   {
     id: 'lime-soda',
     name: 'Lime Soda',
-    variant: 'NEVE Cool Lime Soda',
+    variant: "SAHEB SULTAN'S NEVE COOL Lime Soda",
     tagline: 'Zesty. Fresh. Unique.',
-    description: 'A vibrant, thirst-quenching soda infused with natural key lime extracts and sparkling effervescence for an instant burst of crisp, cooling citrus refreshment.',
+    description: 'A vibrant, thirst-quenching soda infused with purified treated water, sparkling carbonation, and crisp key lime citrus refreshment.',
     image: '/images/flavours/lime-soda.png',
     theme: {
       id: 'lime',
@@ -58,35 +60,36 @@ export const flavours = [
       accentColor: '#22C55E'
     },
     specs: {
-      volume: '250 ml / 300 ml',
-      packaging: 'Food-Grade PET Bottle',
-      shelfLife: 'Best before 6 months from manufacture'
+      volume: '200 ml',
+      mrp: 'Rs. 10/-',
+      packaging: '200 ml Food-Grade PET Bottle',
+      shelfLife: 'Best Before 3 Months From Date of Mfg.'
     },
     ingredients: [
-      'Carbonated Water',
-      'Sugar',
-      'Natural Key Lime Flavouring Substances',
-      'Acidity Regulators (INS 330)',
-      'Common Salt',
-      'Preservatives (INS 211)'
+      'Treated Water',
+      'Sugar (9g / 100ml)',
+      'Carbon Dioxide (Co2)',
+      'Natural Salt',
+      'Malic-Fumaric Acid',
+      'Stabilising Agents',
+      'Class II Preservative (211)',
+      'Synthetic Food Colors (E-102, D-110)'
     ],
-    allergens: 'Contains no common allergens (Gluten-free, Vegan, Nut-free, Dairy-free).',
+    allergens: '100% Vegetarian. Contains no common allergens (Gluten-free, Vegan, Nut-free, Dairy-free).',
     nutrition: [
-      { metric: 'Energy', per100ml: '39 kcal', perServing: '97.5 kcal' },
-      { metric: 'Carbohydrates', per100ml: '9.8 g', perServing: '24.5 g' },
-      { metric: 'Total Sugars', per100ml: '9.5 g', perServing: '23.75 g' },
-      { metric: 'Added Sugars', per100ml: '9.0 g', perServing: '22.5 g' },
+      { metric: 'Energy', per100ml: '32 kcal', perServing: '64 kcal' },
+      { metric: 'Carbohydrates', per100ml: '8.0 g', perServing: '16.0 g' },
+      { metric: 'Sugar', per100ml: '9.0 g', perServing: '18.0 g' },
       { metric: 'Protein', per100ml: '0.0 g', perServing: '0.0 g' },
-      { metric: 'Total Fat', per100ml: '0.0 g', perServing: '0.0 g' },
-      { metric: 'Sodium', per100ml: '12.0 mg', perServing: '30.0 mg' }
+      { metric: 'Total Fat', per100ml: '0.0 g', perServing: '0.0 g' }
     ]
   },
   {
     id: 'orange-flavour',
     name: 'Orange Flavour',
-    variant: 'NEVE Cool Orange Flavour',
-    tagline: 'Citrusy. Bold. Refreshing.',
-    description: 'Sun-drenched, juicy orange citrus notes layered over a smooth, sparkling soda base. Delivers sweet, tangy, sunny effervescence in every chilled sip.',
+    variant: "SAHEB SULTAN'S NEVE COOL Orange Flavour",
+    tagline: 'Unleash the Power of Orange..!',
+    description: 'Sun-drenched, juicy orange notes layered over a crisp, effervescent sparkling soda base. Delivers tangy, sweet refreshment in every chilled sip.',
     image: '/images/flavours/orange-flavour.png',
     theme: {
       id: 'orange',
@@ -97,26 +100,28 @@ export const flavours = [
       accentColor: '#F97316'
     },
     specs: {
-      volume: '250 ml / 300 ml',
-      packaging: 'Food-Grade PET Bottle',
-      shelfLife: 'Best before 6 months from manufacture'
+      volume: '200 ml',
+      mrp: 'Rs. 10/-',
+      packaging: '200 ml Food-Grade PET Bottle',
+      shelfLife: 'Best Before 3 Months From Date of Mfg.'
     },
     ingredients: [
-      'Carbonated Water',
-      'Sugar',
-      'Acidity Regulators (INS 330)',
-      'Natural & Nature-Identical Orange Flavouring Substances',
-      'Food Colours (INS 110, INS 102)'
+      'Treated Water',
+      'Sugar (9g / 100ml)',
+      'Carbon Dioxide (Co2)',
+      'Natural Salt',
+      'Malic-Fumaric Acid',
+      'Stabilising Agents',
+      'Class II Preservative (211)',
+      'Synthetic Food Colors (E-102, D-110)'
     ],
-    allergens: 'Contains no common allergens (Gluten-free, Vegan, Nut-free, Dairy-free).',
+    allergens: '100% Vegetarian. Contains no common allergens (Gluten-free, Vegan, Nut-free, Dairy-free). No Fruit Added.',
     nutrition: [
-      { metric: 'Energy', per100ml: '40 kcal', perServing: '100 kcal' },
-      { metric: 'Carbohydrates', per100ml: '10.0 g', perServing: '25.0 g' },
-      { metric: 'Total Sugars', per100ml: '9.8 g', perServing: '24.5 g' },
-      { metric: 'Added Sugars', per100ml: '9.2 g', perServing: '23.0 g' },
+      { metric: 'Energy', per100ml: '32 kcal', perServing: '64 kcal' },
+      { metric: 'Carbohydrates', per100ml: '8.0 g', perServing: '16.0 g' },
+      { metric: 'Sugar', per100ml: '9.0 g', perServing: '18.0 g' },
       { metric: 'Protein', per100ml: '0.0 g', perServing: '0.0 g' },
-      { metric: 'Total Fat', per100ml: '0.0 g', perServing: '0.0 g' },
-      { metric: 'Sodium', per100ml: '10.0 mg', perServing: '25.0 mg' }
+      { metric: 'Total Fat', per100ml: '0.0 g', perServing: '0.0 g' }
     ]
   }
 ];

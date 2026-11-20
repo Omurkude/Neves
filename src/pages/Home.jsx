@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import {
   FileText,
+  Leaf,
+  BarChart3,
   Factory,
   ShieldCheck,
   Headphones
@@ -11,6 +13,8 @@ import Footer from '../components/layout/Footer.jsx';
 import FlavourSection from '../components/products/FlavourSection.jsx';
 import Accordion from '../components/details/Accordion.jsx';
 import FSSAISection from '../components/details/FSSAISection.jsx';
+import IngredientsSection from '../components/details/IngredientsSection.jsx';
+import NutritionSection from '../components/details/NutritionSection.jsx';
 import ManufacturingSection from '../components/details/ManufacturingSection.jsx';
 import QualitySection from '../components/details/QualitySection.jsx';
 import SupportSection from '../components/details/SupportSection.jsx';
@@ -23,6 +27,8 @@ export default function Home() {
   // State for accordions: FSSAI is open by default as in the reference layout
   const [openSections, setOpenSections] = useState({
     fssai: true,
+    ingredients: false,
+    nutrition: false,
     manufacturing: false,
     quality: false,
     support: false,
@@ -47,7 +53,7 @@ export default function Home() {
             Your Product Details
           </h1>
           <p className="mt-1 sm:mt-2 text-xs sm:text-sm md:text-base text-slate-500 leading-relaxed font-normal">
-            Discover everything about our products — manufacturing, regulatory approvals, and brand information.
+            Discover everything about our products — ingredients, nutrition, manufacturing and regulatory details.
           </p>
         </section>
 
@@ -57,7 +63,7 @@ export default function Home() {
           onSelectFlavour={setSelectedFlavourId}
         />
 
-        {/* 4. Product Information Accordions List matching the reference order */}
+        {/* 4. Product Information Accordions List */}
         <section id="accordions" className="space-y-2 sm:space-y-2.5">
           {/* 4.1 FSSAI & Regulatory Details Accordion (Open by default) */}
           <div id="fssai-section" className="scroll-mt-16">
@@ -72,7 +78,33 @@ export default function Home() {
             </Accordion>
           </div>
 
-          {/* 4.2 Manufacturing Address */}
+          {/* 4.2 Ingredients & Allergen Information Accordion */}
+          <div id="ingredients-section" className="scroll-mt-16">
+            <Accordion
+              id="ingredients"
+              title="Ingredients & Allergen Information"
+              icon={Leaf}
+              isOpen={openSections.ingredients}
+              onToggle={() => toggleSection('ingredients')}
+            >
+              <IngredientsSection />
+            </Accordion>
+          </div>
+
+          {/* 4.3 Nutrition Facts & Calories Accordion */}
+          <div id="nutrition-section" className="scroll-mt-16">
+            <Accordion
+              id="nutrition"
+              title="Nutrition Facts & Calories"
+              icon={BarChart3}
+              isOpen={openSections.nutrition}
+              onToggle={() => toggleSection('nutrition')}
+            >
+              <NutritionSection />
+            </Accordion>
+          </div>
+
+          {/* 4.4 Manufacturing Address */}
           <div id="manufacturing-section" className="scroll-mt-16">
             <Accordion
               id="manufacturing"
@@ -85,7 +117,7 @@ export default function Home() {
             </Accordion>
           </div>
 
-          {/* 4.3 Quality Assurance Reports */}
+          {/* 4.5 Quality Assurance Reports */}
           <div id="quality-section" className="scroll-mt-16">
             <Accordion
               id="quality"
@@ -98,7 +130,7 @@ export default function Home() {
             </Accordion>
           </div>
 
-          {/* 4.4 Brand & Customer Support */}
+          {/* 4.6 Brand & Customer Support */}
           <div id="support-section" className="scroll-mt-16">
             <Accordion
               id="support"

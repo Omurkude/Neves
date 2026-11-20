@@ -9,14 +9,14 @@ export const flavours = [
     variant: 'NEVE Cool Jeera Soda',
     tagline: 'Spiced. Crisp. Refreshing.',
     description: 'An authentic Indian spiced soda crafted with roasted cumin (jeera) extracts, black salt, and effervescent sparkling soda. Delivers a bold, digestive, refreshing fizz with every sip.',
-    image: '/images/flavours/jeera-soda.jpg',
+    image: '/images/flavours/jeera-soda.png',
     theme: {
       id: 'jeera',
-      pastelBg: 'bg-[#FFFBEB]',
-      cardBorder: 'border-amber-200/80',
-      activeRing: 'ring-2 ring-amber-600 border-amber-400 shadow-md',
-      btnColor: 'bg-[#B45309] text-white hover:bg-amber-800',
-      accentColor: '#B45309'
+      pastelBg: 'bg-[#FEF2F2]',
+      cardBorder: 'border-red-100',
+      activeRing: 'ring-2 ring-[#E63946] border-red-300 shadow-sm',
+      btnColor: 'bg-[#E63946] text-white hover:bg-red-700',
+      accentColor: '#E63946'
     },
     specs: {
       volume: '250 ml / 300 ml',
@@ -48,14 +48,14 @@ export const flavours = [
     variant: 'NEVE Cool Lime Soda',
     tagline: 'Zesty. Fresh. Unique.',
     description: 'A vibrant, thirst-quenching soda infused with natural key lime extracts and sparkling effervescence for an instant burst of crisp, cooling citrus refreshment.',
-    image: '/images/flavours/lime-soda.jpg',
+    image: '/images/flavours/lime-soda.png',
     theme: {
       id: 'lime',
       pastelBg: 'bg-[#F0FDF4]',
-      cardBorder: 'border-emerald-200/80',
-      activeRing: 'ring-2 ring-emerald-500 border-emerald-400 shadow-md',
-      btnColor: 'bg-[#16A34A] text-white hover:bg-emerald-700',
-      accentColor: '#16A34A'
+      cardBorder: 'border-emerald-100',
+      activeRing: 'ring-2 ring-[#22C55E] border-emerald-300 shadow-sm',
+      btnColor: 'bg-[#22C55E] text-white hover:bg-emerald-600',
+      accentColor: '#22C55E'
     },
     specs: {
       volume: '250 ml / 300 ml',
@@ -87,14 +87,14 @@ export const flavours = [
     variant: 'NEVE Cool Orange Flavour',
     tagline: 'Citrusy. Bold. Refreshing.',
     description: 'Sun-drenched, juicy orange citrus notes layered over a smooth, sparkling soda base. Delivers sweet, tangy, sunny effervescence in every chilled sip.',
-    image: '/images/flavours/orange-flavour.jpg',
+    image: '/images/flavours/orange-flavour.png',
     theme: {
       id: 'orange',
       pastelBg: 'bg-[#FFF7ED]',
-      cardBorder: 'border-orange-200/80',
-      activeRing: 'ring-2 ring-orange-500 border-orange-400 shadow-md',
-      btnColor: 'bg-[#EA580C] text-white hover:bg-orange-700',
-      accentColor: '#EA580C'
+      cardBorder: 'border-orange-100',
+      activeRing: 'ring-2 ring-[#F97316] border-orange-300 shadow-sm',
+      btnColor: 'bg-[#F97316] text-white hover:bg-orange-600',
+      accentColor: '#F97316'
     },
     specs: {
       volume: '250 ml / 300 ml',

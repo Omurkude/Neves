@@ -21,7 +21,7 @@ export default function FlavourCard({
       }}
       aria-pressed={isSelected}
       aria-label={`Select ${name} to view details`}
-      className={`group relative flex flex-col items-center justify-between rounded-2xl p-2.5 sm:p-3.5 transition-all duration-200 cursor-pointer text-center border ${
+      className={`group relative flex flex-col items-center justify-between rounded-2xl p-2.5 sm:p-4 transition-all duration-200 cursor-pointer text-center border ${
         theme.pastelBg
       } ${
         isSelected
@@ -29,23 +29,23 @@ export default function FlavourCard({
           : `${theme.cardBorder} hover:border-slate-300 shadow-2xs`
       }`}
     >
-      {/* Real Product Bottle Image - Perfectly aligned, full height visible */}
-      <div className="w-full flex items-center justify-center py-1">
+      {/* Real Product Bottle Image - Clean transparent cutout, perfectly centered & uncropped */}
+      <div className="w-full flex items-center justify-center py-1 sm:py-2">
         <img
           src={image}
           alt={`${name} bottle`}
           loading="lazy"
-          className="w-auto h-36 sm:h-44 md:h-48 object-contain rounded-xl drop-shadow-sm transition-transform duration-300 group-hover:scale-105"
+          className="w-auto h-32 sm:h-40 md:h-44 object-contain drop-shadow-sm transition-transform duration-300 group-hover:scale-105"
         />
       </div>
 
-      {/* Flavour Name using Lilita One (Chunky and Fun, Classic Soda Look) */}
-      <h3 className="mt-2 text-sm sm:text-base md:text-lg font-lilita text-[#0B192C] tracking-wide leading-snug">
+      {/* Flavour Name using Poppins (Clean, modern, bold sans) */}
+      <h3 className="mt-2 text-sm sm:text-base md:text-lg font-poppins font-bold text-[#0B192C] tracking-tight leading-snug">
         {name}
       </h3>
 
-      {/* Flavour Tagline using Yellowtail (Slim Retro Script) */}
-      <p className="mt-0.5 sm:mt-1 font-yellowtail text-xs sm:text-sm text-slate-600 leading-tight min-h-[24px] sm:min-h-[28px] flex items-center justify-center">
+      {/* Flavour Tagline using DM Sans (Clean, elegant, minimal) */}
+      <p className="mt-0.5 sm:mt-1 font-dmsans font-normal text-xs sm:text-sm text-slate-500 leading-snug min-h-[32px] sm:min-h-[36px] flex items-center justify-center text-center px-1">
         {tagline}
       </p>
 

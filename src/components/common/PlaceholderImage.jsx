@@ -10,13 +10,12 @@ export default function PlaceholderImage({
 }) {
   if (type === 'logo') {
     return (
-      <div className={`flex items-center gap-2 select-none ${className}`}>
-        {/* Retro Cola Brand Script */}
-        <span className="font-lobster text-3xl sm:text-4xl text-[#E63946] tracking-wide leading-none">
-          Neve
+      <div className={`flex items-center gap-1.5 select-none ${className}`}>
+        {/* Crisp Dynamic NEVE Brand Logo matching reference */}
+        <span className="font-poppins font-black italic tracking-tighter text-2xl sm:text-3xl text-[#E63946] leading-none">
+          NEVE
         </span>
-        {/* Bold & Punchy "COOL" badge using Bangers / Bowlby One */}
-        <span className="font-bangers tracking-widest text-xs sm:text-sm text-white bg-[#1D4ED8] px-2 py-0.5 rounded shadow-2xs">
+        <span className="text-[10px] sm:text-xs font-outfit font-extrabold tracking-wider text-white bg-[#1D4ED8] px-1.5 py-0.5 rounded shadow-2xs">
           COOL
         </span>
       </div>

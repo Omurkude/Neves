@@ -1,12 +1,12 @@
 import React from 'react';
-import { Sparkles, Check } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 export default function FlavourCard({
   flavour,
   isSelected = false,
   onSelect
 }) {
-  const { id, name, categoryBadge, punchline, theme, image, specs } = flavour;
+  const { id, name, tagline, theme, image } = flavour;
 
   return (
     <div
@@ -20,71 +20,45 @@ export default function FlavourCard({
         }
       }}
       aria-pressed={isSelected}
-      aria-label={`Select ${name} to view bottle details and ingredients`}
-      className={`group relative flex flex-col justify-between rounded-3xl p-4 sm:p-5 pt-6 sm:pt-8 transition-all duration-300 cursor-pointer overflow-visible border-2 ${
-        theme.cardBg
+      aria-label={`Select ${name} to view details`}
+      className={`group relative flex flex-col items-center justify-between rounded-2xl p-2.5 sm:p-3.5 transition-all duration-200 cursor-pointer text-center border ${
+        theme.pastelBg
       } ${
         isSelected
           ? `${theme.activeRing}`
-          : `${theme.cardBorder} hover:scale-[1.02] shadow-xl hover:shadow-2xl`
+          : `${theme.cardBorder} hover:border-slate-300 shadow-2xs`
       }`}
     >
-      {/* Top Header Row with Category Badge & Selection State */}
-      <div className="flex items-center justify-between w-full relative z-20">
-        <span className={`text-[10px] sm:text-xs font-baloo font-black uppercase tracking-wider px-2.5 py-0.5 rounded-full shadow-xs ${theme.badgeBg}`}>
-          {categoryBadge}
-        </span>
-        {isSelected ? (
-          <span className="flex items-center gap-1 bg-[#FACC15] text-[#0B192C] text-[10px] sm:text-xs font-baloo font-black px-2 py-0.5 rounded-full shadow-xs">
-            <Check className="w-3 h-3 stroke-[3]" />
-            <span>ACTIVE</span>
-          </span>
-        ) : (
-          <span className="text-[11px] font-baloo font-bold text-white/80 uppercase tracking-wider">
-            ₹10 ONLY
-          </span>
-        )}
-      </div>
-
-      {/* Break-out Bottle Visual - Large, 3D overlapping, high-impact drop shadow */}
-      <div className="w-full flex items-center justify-center -mt-6 sm:-mt-10 mb-2 relative z-10 py-1">
-        {/* Subtle radial glow behind the bottle */}
-        <div
-          className="absolute w-32 h-32 rounded-full blur-2xl pointer-events-none opacity-60"
-          style={{ backgroundColor: theme.accentColor }}
-        />
+      {/* Real Product Bottle Image - Clean transparent cutout, perfectly centered & uncropped */}
+      <div className="w-full flex items-center justify-center py-1 sm:py-2">
         <img
           src={image}
-          alt={`${name} 200ml bottle`}
+          alt={`${name} bottle`}
           loading="lazy"
-          className="h-44 sm:h-56 md:h-64 w-auto object-contain drop-shadow-[0_20px_25px_rgba(0,0,0,0.65)] transform transition-transform duration-300 group-hover:scale-108 group-hover:-translate-y-2"
+          className="w-auto h-32 sm:h-40 md:h-44 object-contain drop-shadow-sm transition-transform duration-300 group-hover:scale-105"
         />
       </div>
 
-      {/* Bottom Content: Bold Typography, Specific Punchline & Clean CTA Strip */}
-      <div className="relative z-20 text-center sm:text-left mt-1">
-        <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-0.5">
-          <h3 className="text-xl sm:text-2xl font-lilita text-white tracking-wide leading-tight">
-            {name}
-          </h3>
-          <span className="text-xs font-baloo font-bold text-[#FACC15] shrink-0">
-            200ml • ₹10
-          </span>
-        </div>
+      {/* Flavour Name - Default Text Style */}
+      <h3 className="mt-2 text-xs sm:text-base font-extrabold text-[#0B192C] tracking-tight leading-snug">
+        {name}
+      </h3>
 
-        <p className="mt-1 text-xs sm:text-[13px] font-dmsans text-white/90 leading-snug line-clamp-2">
-          {punchline}
-        </p>
+      {/* Flavour Tagline - Default Text Style */}
+      <p className="mt-0.5 sm:mt-1 text-[10px] sm:text-xs text-slate-500 font-normal leading-tight min-h-[26px] sm:min-h-[30px] flex items-center justify-center text-center px-1">
+        {tagline}
+      </p>
 
-        {/* Confident Interactive Action Strip (No generic circle arrow!) */}
-        <div className="mt-3 pt-2.5 border-t border-white/15 flex items-center justify-between text-xs font-baloo">
-          <span className="text-white/80 font-semibold group-hover:text-white transition-colors">
-            {isSelected ? 'Viewing Recipe & Specs ↓' : 'Tap to Inspect Details'}
-          </span>
-          <span className="text-[#FACC15] font-black tracking-wider uppercase text-[11px] bg-black/25 px-2 py-0.5 rounded-md">
-            {isSelected ? 'SELECTED' : 'VIEW →'}
-          </span>
-        </div>
+      {/* Circular Arrow Button */}
+      <div className="mt-2 sm:mt-2.5 mb-0.5">
+        <button
+          type="button"
+          tabIndex={-1}
+          aria-hidden="true"
+          className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center transition-transform duration-200 shadow-2xs group-hover:scale-110 ${theme.btnColor}`}
+        >
+          <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" />
+        </button>
       </div>
     </div>
   );

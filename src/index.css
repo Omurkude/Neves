@@ -1,15 +1,36 @@
 @import "tailwindcss";
 
 @theme {
+  /* Bold and Punchy (best for "COOL" and big headings) */
   --font-lilita: 'Lilita One', cursive, sans-serif;
+  --font-bangers: 'Bangers', cursive, sans-serif;
+  --font-bowlby: 'Bowlby One', cursive, sans-serif;
+  --font-titan: 'Titan One', cursive, sans-serif;
+
+  /* Retro Cola Fonts */
+  --font-pacifico: 'Pacifico', cursive;
+  --font-lobster: 'Lobster', cursive;
+  --font-yellowtail: 'Yellowtail', cursive;
+  --font-sansita: 'Sansita Swashed', cursive, sans-serif;
+
+  /* Modern & Supporting Fonts */
+  --font-bebas: 'Bebas Neue', cursive, sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
+  --font-outfit: 'Outfit', sans-serif;
   --font-baloo: 'Baloo 2', cursive, sans-serif;
   --font-dmsans: 'DM Sans', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+  --font-nunito: 'Nunito Sans', sans-serif;
 
   --color-brand-navy: #0b192c;
+  --color-brand-navy-light: #1e3e62;
   --color-brand-red: #e63946;
-  --color-brand-red-dark: #cc2936;
-  --color-brand-blue: #1d4ed8;
-  --color-brand-yellow: #facc15;
+  --color-brand-red-hover: #d62828;
+  --color-pastel-blue: #f0f4f8;
+  --color-pastel-mint: #f2fbf7;
+  --color-pastel-peach: #fff6f0;
+  --color-pastel-citrus: #fffdf0;
+  --color-pastel-berry: #fdf2f4;
 }
 
 :root {
@@ -24,35 +45,18 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  background-color: #faf8f5;
-  color: #0b192c;
+  background-color: #ffffff;
+  color: var(--color-brand-navy, #0b192c);
   font-family: var(--font-dmsans, 'DM Sans', sans-serif);
   overflow-x: hidden;
 }
 
-/* Custom Soda Fizz Bubbles */
-@keyframes floatUp {
-  0% {
-    transform: translateY(0) scale(0.8);
-    opacity: 0;
-  }
-  50% {
-    opacity: 0.6;
-  }
-  100% {
-    transform: translateY(-80px) scale(1.2);
-    opacity: 0;
-  }
-}
-
-.fizz-bubble {
-  animation: floatUp 3s infinite ease-in;
-}
-
-/* Hide scrollbar for clean horizontal scrolls */
+/* Hide scrollbar for Chrome, Safari and Opera */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+/* Hide scrollbar for IE, Edge and Firefox */
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;

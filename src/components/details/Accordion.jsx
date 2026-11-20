@@ -18,9 +18,8 @@ export default function Accordion({
 
   return (
     <div
-      className={`rounded-xl border border-slate-200 bg-white transition-all duration-150 overflow-hidden ${
-        isOpen ? 'shadow-2xs' : 'hover:border-slate-300'
-      } ${className}`}
+      className={`rounded-xl border border-slate-200 bg-white transition-all duration-150 overflow-hidden ${isOpen ? 'shadow-2xs' : 'hover:border-slate-300'
+        } ${className}`}
     >
       <button
         type="button"

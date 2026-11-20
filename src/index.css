@@ -61,3 +61,38 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* Continuous Horizontal Certification Logo Marquee Animation */
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee-infinite {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 32s linear infinite;
+}
+
+.animate-marquee-infinite:hover,
+.marquee-container:hover .animate-marquee-infinite {
+  animation-play-state: paused;
+}
+
+/* Ensure Certification Marquee section connects directly above footer without gap */
+section[aria-label="Food Safety Certifications"] + footer {
+  margin-top: 0 !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee-infinite {
+    animation: none;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

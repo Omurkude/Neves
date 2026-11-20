@@ -10,6 +10,7 @@ import {
 
 import Navbar from '../components/layout/Navbar.jsx';
 import Footer from '../components/layout/Footer.jsx';
+import CertificationMarquee from '../components/layout/CertificationMarquee.jsx';
 import FlavourSection from '../components/products/FlavourSection.jsx';
 import Accordion from '../components/details/Accordion.jsx';
 import FSSAISection from '../components/details/FSSAISection.jsx';
@@ -64,7 +65,7 @@ export default function Home() {
         />
 
         {/* 4. Product Information Accordions List */}
-        <section id="accordions" className="space-y-2 sm:space-y-2.5">
+        <section id="accordions" className="space-y-2 sm:space-y-2.5 mb-8 sm:mb-12">
           {/* 4.1 FSSAI & Regulatory Details Accordion (Open by default) */}
           <div id="fssai-section" className="scroll-mt-16">
             <Accordion
@@ -145,7 +146,10 @@ export default function Home() {
         </section>
       </main>
 
-      {/* 5. Footer: Red bar matching reference */}
+      {/* 5. We Are Certified By - Continuous Scrolling Logo Marquee Section */}
+      <CertificationMarquee />
+
+      {/* 6. Existing Red Footer (Unmodified) */}
       <Footer />
     </div>
   );

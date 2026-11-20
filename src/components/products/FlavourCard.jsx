@@ -21,13 +21,11 @@ export default function FlavourCard({
       }}
       aria-pressed={isSelected}
       aria-label={`Select ${name} to view details`}
-      className={`group relative flex flex-col items-center justify-between rounded-2xl p-2.5 sm:p-3.5 transition-all duration-200 cursor-pointer text-center border ${
-        theme.pastelBg
-      } ${
-        isSelected
+      className={`group relative flex flex-col items-center justify-between rounded-2xl p-2.5 sm:p-3.5 transition-all duration-200 cursor-pointer text-center border ${theme.pastelBg
+        } ${isSelected
           ? `${theme.activeRing}`
           : `${theme.cardBorder} hover:border-slate-300 shadow-2xs`
-      }`}
+        }`}
     >
       {/* Real Product Bottle Image - Clean transparent cutout, perfectly centered & uncropped */}
       <div className="w-full flex items-center justify-center py-1 sm:py-2">

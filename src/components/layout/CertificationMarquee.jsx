@@ -57,36 +57,36 @@ export default function CertificationMarquee() {
         {/* Scrolling Track with duplicate sequence for seamless loop */}
         <div className="animate-marquee-infinite flex items-center">
           {/* Half 1 */}
-          <div className="flex items-center shrink-0 gap-5 sm:gap-8 pr-5 sm:pr-8">
+          <div className="flex items-center shrink-0 gap-4 sm:gap-6 pr-4 sm:pr-6">
             {sequenceItems.map((cert, index) => (
-              <React.Fragment key={`c1-${cert.name}-${index}`}>
-                <div className="flex items-center justify-center h-13 sm:h-15 px-3.5 sm:px-4 py-2 rounded-xl bg-white border border-slate-200/70 shadow-2xs transition-transform duration-200 hover:scale-105 shrink-0">
-                  <img
-                    src={cert.src}
-                    alt={cert.alt}
-                    loading="lazy"
-                    className="h-8 sm:h-10 w-auto max-w-[105px] sm:max-w-[125px] object-contain"
-                  />
-                </div>
-                <span className="w-1.5 h-1.5 rounded-full bg-slate-300 shrink-0" aria-hidden="true" />
-              </React.Fragment>
+              <div
+                key={`c1-${cert.name}-${index}`}
+                className="flex items-center justify-center h-13 sm:h-15 px-3.5 sm:px-4 py-2 rounded-xl bg-white border border-slate-200/70 shadow-2xs transition-transform duration-200 hover:scale-105 shrink-0"
+              >
+                <img
+                  src={cert.src}
+                  alt={cert.alt}
+                  loading="lazy"
+                  className="h-8 sm:h-10 w-auto max-w-[105px] sm:max-w-[125px] object-contain"
+                />
+              </div>
             ))}
           </div>
 
           {/* Half 2 (Duplicated for seamless infinite loop) */}
-          <div className="flex items-center shrink-0 gap-5 sm:gap-8 pr-5 sm:pr-8" aria-hidden="true">
+          <div className="flex items-center shrink-0 gap-4 sm:gap-6 pr-4 sm:pr-6" aria-hidden="true">
             {sequenceItems.map((cert, index) => (
-              <React.Fragment key={`c2-${cert.name}-${index}`}>
-                <div className="flex items-center justify-center h-13 sm:h-15 px-3.5 sm:px-4 py-2 rounded-xl bg-white border border-slate-200/70 shadow-2xs transition-transform duration-200 hover:scale-105 shrink-0">
-                  <img
-                    src={cert.src}
-                    alt=""
-                    loading="lazy"
-                    className="h-8 sm:h-10 w-auto max-w-[105px] sm:max-w-[125px] object-contain"
-                  />
-                </div>
-                <span className="w-1.5 h-1.5 rounded-full bg-slate-300 shrink-0" aria-hidden="true" />
-              </React.Fragment>
+              <div
+                key={`c2-${cert.name}-${index}`}
+                className="flex items-center justify-center h-13 sm:h-15 px-3.5 sm:px-4 py-2 rounded-xl bg-white border border-slate-200/70 shadow-2xs transition-transform duration-200 hover:scale-105 shrink-0"
+              >
+                <img
+                  src={cert.src}
+                  alt=""
+                  loading="lazy"
+                  className="h-8 sm:h-10 w-auto max-w-[105px] sm:max-w-[125px] object-contain"
+                />
+              </div>
             ))}
           </div>
         </div>

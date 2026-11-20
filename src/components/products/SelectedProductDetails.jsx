@@ -3,54 +3,60 @@ import React from 'react';
 export default function SelectedProductDetails({ flavour }) {
   if (!flavour) return null;
 
-  const { name, variant, description, theme, specs, ingredients, allergens, nutrition, image } = flavour;
+  const { name, variant, description, theme, specs, ingredients, allergens, nutrition, image, tagline } = flavour;
 
   return (
     <div id="selected-product" className="mb-6 sm:mb-8 scroll-mt-20">
       <div className="bg-white rounded-2xl border border-slate-200/90 shadow-2xs p-4 sm:p-6">
         {/* Active Flavour Indicator Header */}
-        <div className="flex items-center justify-between mb-4 pb-3 border-b border-slate-100 font-poppins">
+        <div className="flex items-center justify-between mb-4 pb-3 border-b border-slate-100 font-dmsans">
           <div className="flex items-center gap-2">
             <span
               className="w-2.5 h-2.5 rounded-full shrink-0"
               style={{ backgroundColor: theme.accentColor }}
             />
-            <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-slate-500 font-outfit">
+            <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-500 font-outfit">
               Selected Product Details
             </span>
           </div>
-          <span className="text-xs font-bold text-[#0B192C] truncate ml-2 font-poppins">
+          <span className="text-sm font-lobster text-[#0B192C] tracking-wide truncate ml-2">
             {variant || name}
           </span>
         </div>
 
-        {/* Product Meta: Centered Bottle Photo + Centered Title & Description on Mobile */}
+        {/* Product Meta: Properly Centered, Uncropped Bottle Photo + Retro Cola Typography */}
         <div className="grid grid-cols-1 sm:grid-cols-12 gap-5 sm:gap-6 items-center">
-          {/* Bottle Visual Box */}
+          {/* Bottle Visual Box - Perfectly centered, uncropped object-contain showing entire cap and splash */}
           <div className="sm:col-span-5 flex justify-center items-center">
-            <div className="w-full max-w-[240px] sm:max-w-none rounded-xl overflow-hidden shadow-xs aspect-[3/4] max-h-64 sm:max-h-72 bg-slate-900/5 flex items-center justify-center">
+            <div className="w-full max-w-[240px] sm:max-w-[270px] flex items-center justify-center p-2 rounded-2xl bg-gradient-to-b from-slate-50 to-slate-100/60 border border-slate-200/60 shadow-xs">
               <img
                 src={image}
                 alt={`${name} bottle`}
-                className="w-full h-full object-cover"
+                className="w-auto h-auto max-h-[300px] sm:max-h-[350px] object-contain rounded-xl drop-shadow-md"
               />
             </div>
           </div>
 
-          {/* Description & Quick Specs */}
+          {/* Description & Quick Specs - Retro Cola styled headings */}
           <div className="sm:col-span-7 space-y-3 text-center sm:text-left">
             <div>
-              {/* Heading using Poppins */}
-              <h3 className="text-xl sm:text-2xl font-poppins font-bold text-[#0B192C] tracking-tight">
+              {/* Product Heading using Lobster - bold classic cola script */}
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-lobster text-[#0B192C] tracking-wide leading-tight">
                 {variant || name}
               </h3>
-              {/* Body text using DM Sans */}
-              <p className="mt-1.5 text-xs sm:text-sm font-dmsans text-slate-600 leading-relaxed font-normal max-w-md mx-auto sm:mx-0">
+              
+              {/* Tagline in Yellowtail slim retro script */}
+              <p className="mt-1 font-yellowtail text-lg sm:text-xl text-[#E63946]">
+                "{tagline}"
+              </p>
+
+              {/* Body text in DM Sans */}
+              <p className="mt-2 text-xs sm:text-sm font-dmsans text-slate-600 leading-relaxed font-normal max-w-md mx-auto sm:mx-0">
                 {description}
               </p>
             </div>
 
-            {/* Quick Specs Chips using Outfit & Inter */}
+            {/* Quick Specs Chips */}
             <div className="grid grid-cols-2 gap-2 pt-1 text-xs max-w-xs sm:max-w-none mx-auto sm:mx-0">
               <div className="p-2.5 rounded-lg bg-slate-50 border border-slate-200/70 text-center sm:text-left">
                 <span className="block font-outfit font-bold text-slate-400 text-[10px] uppercase">Net Volume</span>
@@ -64,12 +70,12 @@ export default function SelectedProductDetails({ flavour }) {
           </div>
         </div>
 
-        {/* Ingredients & Nutrition Breakdown for Selected Product */}
-        <div className="mt-5 pt-5 border-t border-slate-100 grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {/* Ingredients using Inter */}
+        {/* Ingredients & Nutrition Breakdown with Curvy Stylish Headers */}
+        <div className="mt-6 pt-5 border-t border-slate-100 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {/* Ingredients */}
           <div className="p-3.5 rounded-xl bg-slate-50/70 border border-slate-200/70 text-left font-inter">
-            <h4 className="text-xs font-poppins font-bold text-[#0B192C] uppercase tracking-wider mb-2">
-              Key Ingredients
+            <h4 className="text-sm font-sansita font-bold text-[#0B192C] tracking-wide mb-2 flex items-center gap-1.5">
+              <span>Key Ingredients</span>
             </h4>
             <ul className="space-y-1 text-xs text-slate-600 mb-3">
               {ingredients.map((item) => (
@@ -85,10 +91,10 @@ export default function SelectedProductDetails({ flavour }) {
             </div>
           </div>
 
-          {/* Nutrition Summary using Inter */}
+          {/* Nutrition Summary */}
           <div className="p-3.5 rounded-xl bg-slate-50/70 border border-slate-200/70 text-left font-inter">
             <div className="flex items-center justify-between mb-2">
-              <h4 className="text-xs font-poppins font-bold text-[#0B192C] uppercase tracking-wider">
+              <h4 className="text-sm font-sansita font-bold text-[#0B192C] tracking-wide">
                 Nutrition Facts
               </h4>
               <span className="text-[10px] font-nunito text-slate-500 font-medium">Per 250ml</span>

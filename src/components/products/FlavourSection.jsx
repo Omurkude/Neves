@@ -6,12 +6,12 @@ export default function FlavourSection({ selectedFlavourId, onSelectFlavour }) {
   return (
     <section id="flavours" className="mb-6 sm:mb-8 scroll-mt-20">
       <div className="mb-3 sm:mb-4">
-        {/* Modern Heading using Outfit */}
-        <h2 className="text-xl sm:text-2xl font-outfit font-extrabold text-[#0B192C] tracking-tight">
+        {/* Curvy & Stylish Heading using Sansita Swashed */}
+        <h2 className="text-2xl sm:text-3xl font-sansita font-bold text-[#0B192C] tracking-wide">
           Our Flavours
         </h2>
-        {/* Subtitle using Nunito Sans */}
-        <p className="mt-0.5 sm:mt-1 text-xs sm:text-sm font-nunito text-slate-500 font-medium">
+        {/* Subtitle using DM Sans */}
+        <p className="mt-0.5 sm:mt-1 text-xs sm:text-sm font-dmsans text-slate-500 font-normal">
           Choose a flavour to view its details below.
         </p>
       </div>

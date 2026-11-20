@@ -1,6 +1,13 @@
 @import "tailwindcss";
 
 @theme {
+  /* Retro Cola Fonts */
+  --font-pacifico: 'Pacifico', cursive;
+  --font-lobster: 'Lobster', cursive;
+  --font-yellowtail: 'Yellowtail', cursive;
+  --font-sansita: 'Sansita Swashed', cursive, sans-serif;
+
+  /* Modern & Supporting Fonts */
   --font-bebas: 'Bebas Neue', cursive, sans-serif;
   --font-lilita: 'Lilita One', cursive, sans-serif;
   --font-poppins: 'Poppins', sans-serif;

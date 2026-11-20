@@ -29,23 +29,23 @@ export default function FlavourCard({
           : `${theme.cardBorder} hover:border-slate-300 shadow-2xs`
       }`}
     >
-      {/* Real Product Bottle Image */}
-      <div className="w-full aspect-[2/3] max-h-40 sm:max-h-52 md:max-h-56 rounded-xl overflow-hidden shadow-2xs flex items-center justify-center bg-slate-900/5">
+      {/* Real Product Bottle Image - Perfectly aligned, full height visible */}
+      <div className="w-full flex items-center justify-center py-1">
         <img
           src={image}
           alt={`${name} bottle`}
           loading="lazy"
-          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          className="w-auto h-36 sm:h-44 md:h-48 object-contain rounded-xl drop-shadow-sm transition-transform duration-300 group-hover:scale-105"
         />
       </div>
 
-      {/* Playful Heading using Baloo 2 */}
-      <h3 className="mt-2 text-xs sm:text-base font-baloo font-bold text-[#0B192C] tracking-tight leading-snug">
+      {/* Flavour Name using Lobster (Bold Classic Cola Script) */}
+      <h3 className="mt-2 text-sm sm:text-base md:text-lg font-lobster text-[#0B192C] tracking-wide leading-snug">
         {name}
       </h3>
 
-      {/* Subtitle using Nunito Sans */}
-      <p className="mt-0.5 sm:mt-1 text-[10px] sm:text-xs font-nunito text-slate-500 font-semibold leading-tight min-h-[26px] sm:min-h-[30px] flex items-center justify-center">
+      {/* Flavour Tagline using Yellowtail (Slim Retro Script) */}
+      <p className="mt-0.5 sm:mt-1 font-yellowtail text-xs sm:text-sm text-slate-600 leading-tight min-h-[24px] sm:min-h-[28px] flex items-center justify-center">
         {tagline}
       </p>
 

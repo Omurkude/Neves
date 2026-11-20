@@ -50,12 +50,12 @@ export default function Home() {
       <Navbar />
 
       <main className="flex-1 max-w-3xl w-full mx-auto px-4 sm:px-6 pt-6 sm:pt-8">
-        {/* 2. Hero Section: Uses Lilita One / Bebas Neue for the hero banner */}
+        {/* 2. Hero Section: Styled in Pacifico - Old Soda Logo Script */}
         <section className="mb-6 sm:mb-8 text-left">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-lilita text-[#0B192C] tracking-wide">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-pacifico text-[#0B192C] tracking-wide leading-tight">
             Your Product Details
           </h1>
-          <p className="mt-1 sm:mt-2 text-xs sm:text-sm md:text-base font-dmsans text-slate-500 leading-relaxed font-normal">
+          <p className="mt-1.5 sm:mt-2 text-xs sm:text-sm md:text-base font-dmsans text-slate-500 leading-relaxed font-normal">
             Discover everything about our products — ingredients, nutrition, manufacturing details and more.
           </p>
         </section>

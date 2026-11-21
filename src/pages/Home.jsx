@@ -12,6 +12,7 @@ import Navbar from '../components/layout/Navbar.jsx';
 import Footer from '../components/layout/Footer.jsx';
 import CertificationMarquee from '../components/layout/CertificationMarquee.jsx';
 import FlavourSection from '../components/products/FlavourSection.jsx';
+import SelectedProductDetails from '../components/products/SelectedProductDetails.jsx';
 import Accordion from '../components/details/Accordion.jsx';
 import FSSAISection from '../components/details/FSSAISection.jsx';
 import IngredientsSection from '../components/details/IngredientsSection.jsx';
@@ -19,13 +20,13 @@ import NutritionSection from '../components/details/NutritionSection.jsx';
 import ManufacturingSection from '../components/details/ManufacturingSection.jsx';
 import QualitySection from '../components/details/QualitySection.jsx';
 import SupportSection from '../components/details/SupportSection.jsx';
-import flavours from '../data/flavours.js';
+import flavours, { getFlavourById } from '../data/flavours.js';
 
 export default function Home() {
-  // State for selected flavour (defaults to the first flavour, Jeera Soda)
-  const [selectedFlavourId, setSelectedFlavourId] = useState(flavours[0]?.id || 'jeera-soda');
+  // State for selected flavour (defaults to Classic Cola)
+  const [selectedFlavourId, setSelectedFlavourId] = useState(flavours[0]?.id || 'classic-cola');
 
-  // State for accordions: FSSAI is open by default as in the reference layout
+  // State for accordions: FSSAI is open by default
   const [openSections, setOpenSections] = useState({
     fssai: true,
     ingredients: false,
@@ -35,7 +36,8 @@ export default function Home() {
     support: false,
   });
 
-  const selectedFlavour = flavours.find((f) => f.id === selectedFlavourId) || flavours[0];
+  // Current selected flavour object drives all product details
+  const selectedFlavour = getFlavourById(selectedFlavourId);
 
   const toggleSection = (key) => {
     setOpenSections((prev) => ({
@@ -60,15 +62,18 @@ export default function Home() {
           </p>
         </section>
 
-        {/* 3. Our Flavours Section (All 3 Product Cards) */}
+        {/* 3. Our Flavours Section (3 Interactive Product Cards) */}
         <FlavourSection
           selectedFlavourId={selectedFlavourId}
           onSelectFlavour={setSelectedFlavourId}
         />
 
-        {/* 4. Product Information Accordions List */}
+        {/* 4. Active Selected Product Details (Dynamically updates on selection) */}
+        <SelectedProductDetails flavour={selectedFlavour} />
+
+        {/* 5. Product Information Accordions List */}
         <section id="accordions" className="space-y-2 sm:space-y-2.5 mb-8 sm:mb-12">
-          {/* 4.1 FSSAI & Regulatory Details Accordion (Open by default) */}
+          {/* 5.1 FSSAI & Regulatory Details Accordion (Open by default) */}
           <div id="fssai-section" className="scroll-mt-16">
             <Accordion
               id="fssai"
@@ -81,7 +86,7 @@ export default function Home() {
             </Accordion>
           </div>
 
-          {/* 4.2 Ingredients & Allergen Information Accordion */}
+          {/* 5.2 Ingredients & Allergen Information Accordion */}
           <div id="ingredients-section" className="scroll-mt-16">
             <Accordion
               id="ingredients"
@@ -94,7 +99,7 @@ export default function Home() {
             </Accordion>
           </div>
 
-          {/* 4.3 Nutrition Facts & Calories Accordion */}
+          {/* 5.3 Nutrition Facts & Calories Accordion */}
           <div id="nutrition-section" className="scroll-mt-16">
             <Accordion
               id="nutrition"
@@ -107,7 +112,7 @@ export default function Home() {
             </Accordion>
           </div>
 
-          {/* 4.4 Manufacturing Address */}
+          {/* 5.4 Manufacturing Address */}
           <div id="manufacturing-section" className="scroll-mt-16">
             <Accordion
               id="manufacturing"
@@ -120,7 +125,7 @@ export default function Home() {
             </Accordion>
           </div>
 
-          {/* 4.5 Quality Assurance Reports */}
+          {/* 5.5 Quality Assurance Reports */}
           <div id="quality-section" className="scroll-mt-16">
             <Accordion
               id="quality"
@@ -133,7 +138,7 @@ export default function Home() {
             </Accordion>
           </div>
 
-          {/* 4.6 Brand & Customer Support */}
+          {/* 5.6 Brand & Customer Support */}
           <div id="support-section" className="scroll-mt-16">
             <Accordion
               id="support"
@@ -148,10 +153,10 @@ export default function Home() {
         </section>
       </main>
 
-      {/* 5. We Are Certified By - Continuous Scrolling Logo Marquee Section */}
+      {/* 6. We Are Certified By - Continuous Scrolling Logo Marquee Section */}
       <CertificationMarquee />
 
-      {/* 6. Existing Red Footer (Unmodified) */}
+      {/* 7. Existing Red Footer (Unmodified) */}
       <Footer />
     </div>
   );

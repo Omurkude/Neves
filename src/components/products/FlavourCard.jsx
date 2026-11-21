@@ -21,11 +21,11 @@ export default function FlavourCard({
       }}
       aria-pressed={isSelected}
       aria-label={`Select ${name} to view details`}
-      className={`group relative flex flex-col items-center justify-between rounded-2xl p-2.5 sm:p-3.5 transition-all duration-200 cursor-pointer text-center border ${theme.pastelBg
-        } ${isSelected
+      className={`group relative flex flex-col items-center justify-between rounded-2xl p-2.5 sm:p-3.5 transition-all duration-200 cursor-pointer text-center border ${theme.pastelBg} ${
+        isSelected
           ? `${theme.activeRing}`
           : `${theme.cardBorder} hover:border-slate-300 shadow-2xs`
-        }`}
+      }`}
     >
       {/* Real Product Bottle Image - Clean transparent cutout, perfectly centered & uncropped */}
       <div className="w-full flex items-center justify-center py-1 sm:py-2">
@@ -47,16 +47,13 @@ export default function FlavourCard({
         {tagline}
       </p>
 
-      {/* Circular Arrow Button */}
-      <div className="mt-2 sm:mt-2.5 mb-0.5">
-        <button
-          type="button"
-          tabIndex={-1}
-          aria-hidden="true"
+      {/* Circular Arrow Indicator */}
+      <div className="mt-2 sm:mt-2.5 mb-0.5 pointer-events-none">
+        <div
           className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center transition-transform duration-200 shadow-2xs group-hover:scale-110 ${theme.btnColor}`}
         >
           <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" />
-        </button>
+        </div>
       </div>
     </div>
   );

@@ -1,9 +1,27 @@
 import React from 'react';
+import { Palette, ShieldAlert, Sparkles, CheckCircle2 } from 'lucide-react';
 
 export default function SelectedProductDetails({ flavour }) {
   if (!flavour) return null;
 
-  const { name, variant, description, theme, specs, ingredients, allergens, nutrition, image, tagline } = flavour;
+  const {
+    name,
+    variant,
+    description,
+    theme,
+    specs,
+    ingredients,
+    preservatives,
+    syntheticColours,
+    syntheticColoursDisplay,
+    syntheticColoursDetail,
+    hasSyntheticColours,
+    allergens,
+    allergenNotice,
+    nutrition,
+    image,
+    tagline
+  } = flavour;
 
   return (
     <div id="selected-product" className="mb-6 sm:mb-8 scroll-mt-20">
@@ -32,7 +50,7 @@ export default function SelectedProductDetails({ flavour }) {
               <img
                 src={image}
                 alt={`${name} bottle`}
-                className="w-auto h-auto max-h-[240px] sm:max-h-[280px] object-contain drop-shadow-md"
+                className="w-auto h-auto max-h-[240px] sm:max-h-[280px] object-contain drop-shadow-md transition-all duration-300"
               />
             </div>
           </div>
@@ -52,14 +70,51 @@ export default function SelectedProductDetails({ flavour }) {
             </div>
 
             {/* Quick Specs Chips */}
-            <div className="grid grid-cols-2 gap-2 pt-1 text-xs max-w-xs sm:max-w-none mx-auto sm:mx-0">
-              <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200/70 text-center sm:text-left">
+            <div className="grid grid-cols-3 gap-2 pt-1 text-xs max-w-sm sm:max-w-none mx-auto sm:mx-0">
+              <div className="p-2 sm:p-2.5 rounded-xl bg-slate-50 border border-slate-200/70 text-center sm:text-left">
                 <span className="block font-semibold text-slate-400 text-[10px] uppercase">Net Volume</span>
                 <span className="font-bold text-[#0B192C] text-xs sm:text-sm">{specs.volume}</span>
               </div>
-              <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200/70 text-center sm:text-left">
+              <div className="p-2 sm:p-2.5 rounded-xl bg-slate-50 border border-slate-200/70 text-center sm:text-left">
                 <span className="block font-semibold text-slate-400 text-[10px] uppercase">Packaging</span>
                 <span className="font-bold text-[#0B192C] text-xs sm:text-sm">{specs.packaging}</span>
+              </div>
+              <div className="p-2 sm:p-2.5 rounded-xl bg-slate-50 border border-slate-200/70 text-center sm:text-left">
+                <span className="block font-semibold text-slate-400 text-[10px] uppercase">M.R.P.</span>
+                <span className="font-extrabold text-[#E63946] text-xs sm:text-sm">{specs.mrp}</span>
+              </div>
+            </div>
+
+            {/* Synthetic Food Colours Callout Banner */}
+            <div className={`p-3 rounded-xl border text-left text-xs ${
+              hasSyntheticColours
+                ? 'bg-amber-50/70 border-amber-200/80 text-amber-950'
+                : 'bg-emerald-50/70 border-emerald-200/80 text-emerald-950'
+            }`}>
+              <div className="flex items-center gap-1.5 font-bold uppercase tracking-wider text-[11px] mb-1">
+                <Palette className={`w-3.5 h-3.5 shrink-0 ${hasSyntheticColours ? 'text-amber-700' : 'text-emerald-700'}`} />
+                <span>Synthetic Food Colours</span>
+              </div>
+              <div className="flex flex-wrap items-center gap-2">
+                {hasSyntheticColours && syntheticColours.length > 0 ? (
+                  <>
+                    <div className="flex gap-1.5">
+                      {syntheticColours.map((col) => (
+                        <span key={col} className="px-2 py-0.5 rounded font-mono font-bold text-xs bg-amber-200/80 text-amber-900 border border-amber-300">
+                          {col}
+                        </span>
+                      ))}
+                    </div>
+                    <span className="text-[11px] font-medium text-slate-700">
+                      {syntheticColoursDetail}
+                    </span>
+                  </>
+                ) : (
+                  <span className="font-bold text-emerald-800 text-xs flex items-center gap-1">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                    No added colours.
+                  </span>
+                )}
               </div>
             </div>
           </div>
@@ -74,15 +129,25 @@ export default function SelectedProductDetails({ flavour }) {
             </h4>
             <ul className="space-y-1 text-xs text-slate-600 mb-2.5">
               {ingredients.map((item) => (
-                <li key={item} className="flex items-start gap-1.5">
+                <li key={typeof item === 'string' ? item : item.name} className="flex items-start gap-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-slate-400 mt-1.5 shrink-0" />
-                  <span>{item}</span>
+                  <span>{typeof item === 'string' ? item : item.name}</span>
                 </li>
               ))}
             </ul>
-            <div className="pt-2 border-t border-slate-200/60 text-[11px] text-slate-500">
+
+            {/* Preservatives */}
+            {preservatives && preservatives.length > 0 && (
+              <div className="pt-2 border-t border-slate-200/60 text-[11px] text-slate-600">
+                <strong className="text-slate-800">Preservatives: </strong>
+                {preservatives.join(', ')}
+              </div>
+            )}
+
+            {/* Allergens */}
+            <div className="pt-1.5 text-[11px] text-slate-500">
               <strong className="text-slate-700">Allergens: </strong>
-              {allergens}
+              {allergenNotice || (Array.isArray(allergens) ? allergens.join(', ') : allergens)}
             </div>
           </div>
 
@@ -92,7 +157,7 @@ export default function SelectedProductDetails({ flavour }) {
               <h4 className="text-xs font-bold text-[#0B192C] tracking-wider uppercase">
                 Nutrition Summary
               </h4>
-              <span className="text-[10px] text-slate-500 font-semibold">Per Serving</span>
+              <span className="text-[10px] text-slate-500 font-semibold">Per Serving (200 ml)</span>
             </div>
 
             <div className="overflow-x-auto rounded-lg border border-slate-200 bg-white">
@@ -100,13 +165,15 @@ export default function SelectedProductDetails({ flavour }) {
                 <thead>
                   <tr className="bg-slate-50 text-slate-600 font-semibold border-b border-slate-200">
                     <th className="py-1 px-2.5">Nutrient</th>
-                    <th className="py-1 px-2.5 text-right font-bold text-[#0B192C]">Amount</th>
+                    <th className="py-1 px-2.5 text-right">Per 100 ml</th>
+                    <th className="py-1 px-2.5 text-right font-bold text-[#0B192C]">Per Bottle</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-100 text-slate-600">
-                  {nutrition.slice(0, 4).map((row) => (
-                    <tr key={row.metric}>
-                      <td className="py-1 px-2.5 font-medium text-slate-800">{row.metric}</td>
+                  {nutrition?.table?.map((row) => (
+                    <tr key={row.nutrient || row.metric}>
+                      <td className="py-1 px-2.5 font-medium text-slate-800">{row.nutrient || row.metric}</td>
+                      <td className="py-1 px-2.5 text-right text-slate-500">{row.per100ml}</td>
                       <td className="py-1 px-2.5 text-right font-bold text-[#0B192C]">{row.perServing}</td>
                     </tr>
                   ))}

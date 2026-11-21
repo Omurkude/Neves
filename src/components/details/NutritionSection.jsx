@@ -1,9 +1,14 @@
 import React from 'react';
 import productDetails from '../../data/productDetails.js';
-import { Sparkles, Info } from 'lucide-react';
+import { Info } from 'lucide-react';
 
 export default function NutritionSection({ selectedFlavour }) {
-  const { nutritionInfo } = productDetails;
+  const currentFlavour = selectedFlavour;
+  const nutrition = currentFlavour?.nutrition;
+  const tableData = nutrition?.table || productDetails.nutritionInfo.generalTable;
+  const servingSize = currentFlavour?.specs?.volume || productDetails.nutritionInfo.servingSize;
+  const mrp = currentFlavour?.specs?.mrp || productDetails.nutritionInfo.mrp;
+  const approxText = nutrition?.rawApproxText || productDetails.nutritionInfo.rawApproxText;
 
   return (
     <div className="space-y-4">
@@ -11,15 +16,15 @@ export default function NutritionSection({ selectedFlavour }) {
       <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-slate-600 p-3 bg-slate-50 rounded-xl border border-slate-200">
         <div>
           <span className="text-slate-500">Net Quantity: </span>
-          <strong className="text-[#0B192C] font-extrabold">{nutritionInfo.servingSize}</strong>
-          {selectedFlavour && (
-            <span className="ml-2 text-slate-500 font-medium">({selectedFlavour.name})</span>
+          <strong className="text-[#0B192C] font-extrabold">{servingSize}</strong>
+          {currentFlavour && (
+            <span className="ml-2 text-slate-500 font-medium">({currentFlavour.name})</span>
           )}
         </div>
         <div className="flex items-center gap-3">
           <span className="font-semibold text-slate-600">Servings: 1</span>
           <span className="px-2 py-0.5 rounded bg-red-50 text-[#E63946] font-bold text-xs border border-red-200/60">
-            {nutritionInfo.mrp}
+            {mrp}
           </span>
         </div>
       </div>
@@ -28,8 +33,10 @@ export default function NutritionSection({ selectedFlavour }) {
       <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-start gap-2.5 text-xs text-slate-700">
         <Info className="w-4 h-4 text-slate-500 shrink-0 mt-0.5" />
         <div>
-          <span className="font-bold text-slate-900 block mb-0.5">Label Declaration (Per 100ml Approx):</span>
-          <span className="font-mono text-slate-800 text-[11px] font-semibold">{nutritionInfo.rawApproxText}</span>
+          <span className="font-bold text-slate-900 block mb-0.5">
+            Label Declaration (Per 100ml Approx - {currentFlavour?.name || 'NEVE COOL'}):
+          </span>
+          <span className="font-mono text-slate-800 text-[11px] font-semibold">{approxText}</span>
         </div>
       </div>
 
@@ -46,11 +53,17 @@ export default function NutritionSection({ selectedFlavour }) {
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-100 text-slate-700">
-            {nutritionInfo.generalTable.map((row) => (
-              <tr key={row.nutrient} className="hover:bg-slate-50/50">
-                <td className="py-2.5 px-3 sm:px-4 font-semibold text-slate-900">{row.nutrient}</td>
-                <td className="py-2.5 px-3 sm:px-4 text-right text-slate-600 font-medium">{row.per100ml}</td>
-                <td className="py-2.5 px-3 sm:px-4 text-right font-bold text-[#0B192C]">{row.perServing}</td>
+            {tableData.map((row) => (
+              <tr key={row.nutrient || row.metric} className="hover:bg-slate-50/50">
+                <td className="py-2.5 px-3 sm:px-4 font-semibold text-slate-900">
+                  {row.nutrient || row.metric}
+                </td>
+                <td className="py-2.5 px-3 sm:px-4 text-right text-slate-600 font-medium">
+                  {row.per100ml}
+                </td>
+                <td className="py-2.5 px-3 sm:px-4 text-right font-bold text-[#0B192C]">
+                  {row.perServing}
+                </td>
               </tr>
             ))}
           </tbody>
@@ -58,7 +71,7 @@ export default function NutritionSection({ selectedFlavour }) {
       </div>
 
       <p className="text-[11px] text-slate-500 italic">
-        * {nutritionInfo.note}
+        * Approximate laboratory values based on standard 200 ml product label declaration.
       </p>
     </div>
   );

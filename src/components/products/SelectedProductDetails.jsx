@@ -70,7 +70,7 @@ export default function SelectedProductDetails({ flavour }) {
             </div>
 
             {/* Quick Specs Chips */}
-            <div className="grid grid-cols-3 gap-2 pt-1 text-xs max-w-sm sm:max-w-none mx-auto sm:mx-0">
+            <div className="grid grid-cols-2 gap-2 pt-1 text-xs max-w-sm sm:max-w-none mx-auto sm:mx-0">
               <div className="p-2 sm:p-2.5 rounded-xl bg-slate-50 border border-slate-200/70 text-center sm:text-left">
                 <span className="block font-semibold text-slate-400 text-[10px] uppercase">Net Volume</span>
                 <span className="font-bold text-[#0B192C] text-xs sm:text-sm">{specs.volume}</span>
@@ -78,10 +78,6 @@ export default function SelectedProductDetails({ flavour }) {
               <div className="p-2 sm:p-2.5 rounded-xl bg-slate-50 border border-slate-200/70 text-center sm:text-left">
                 <span className="block font-semibold text-slate-400 text-[10px] uppercase">Packaging</span>
                 <span className="font-bold text-[#0B192C] text-xs sm:text-sm">{specs.packaging}</span>
-              </div>
-              <div className="p-2 sm:p-2.5 rounded-xl bg-slate-50 border border-slate-200/70 text-center sm:text-left">
-                <span className="block font-semibold text-slate-400 text-[10px] uppercase">M.R.P.</span>
-                <span className="font-extrabold text-[#E63946] text-xs sm:text-sm">{specs.mrp}</span>
               </div>
             </div>
 

@@ -22,7 +22,6 @@ export const flavours = [
     },
     specs: {
       volume: '200 ml',
-      mrp: 'Rs. 10/-',
       packaging: '200 ml Food-Grade PET Bottle',
       shelfLife: 'Best Before 3 Months From Date of Mfg.'
     },
@@ -80,7 +79,6 @@ export const flavours = [
     },
     specs: {
       volume: '200 ml',
-      mrp: 'Rs. 10/-',
       packaging: '200 ml Food-Grade PET Bottle',
       shelfLife: 'Best Before 3 Months From Date of Mfg.'
     },
@@ -139,7 +137,6 @@ export const flavours = [
     },
     specs: {
       volume: '200 ml',
-      mrp: 'Rs. 10/-',
       packaging: '200 ml Food-Grade PET Bottle',
       shelfLife: 'Best Before 3 Months From Date of Mfg.'
     },

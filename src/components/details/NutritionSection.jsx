@@ -7,7 +7,6 @@ export default function NutritionSection({ selectedFlavour }) {
   const nutrition = currentFlavour?.nutrition;
   const tableData = nutrition?.table || productDetails.nutritionInfo.generalTable;
   const servingSize = currentFlavour?.specs?.volume || productDetails.nutritionInfo.servingSize;
-  const mrp = currentFlavour?.specs?.mrp || productDetails.nutritionInfo.mrp;
   const approxText = nutrition?.rawApproxText || productDetails.nutritionInfo.rawApproxText;
 
   return (
@@ -21,11 +20,8 @@ export default function NutritionSection({ selectedFlavour }) {
             <span className="ml-2 text-slate-500 font-medium">({currentFlavour.name})</span>
           )}
         </div>
-        <div className="flex items-center gap-3">
-          <span className="font-semibold text-slate-600">Servings: 1</span>
-          <span className="px-2 py-0.5 rounded bg-red-50 text-[#E63946] font-bold text-xs border border-red-200/60">
-            {mrp}
-          </span>
+        <div>
+          <span className="font-semibold text-slate-600">Servings Per Bottle: 1</span>
         </div>
       </div>
 

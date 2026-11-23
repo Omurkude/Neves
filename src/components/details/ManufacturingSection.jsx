@@ -43,10 +43,6 @@ export default function ManufacturingSection() {
               <strong className="text-slate-900">{manufacturingInfo.netQuantity}</strong>
             </div>
             <div className="flex justify-between py-1 border-b border-slate-100">
-              <span className="text-slate-500">M.R.P.:</span>
-              <strong className="text-[#E63946] font-extrabold">{manufacturingInfo.mrp}</strong>
-            </div>
-            <div className="flex justify-between py-1 border-b border-slate-100">
               <span className="text-slate-500">Shelf Life:</span>
               <span className="text-slate-800 font-medium">{manufacturingInfo.shelfLife}</span>
             </div>

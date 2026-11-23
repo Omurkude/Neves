@@ -62,7 +62,6 @@ export const productDetails = {
     servingSize: '200 ml (1 bottle)',
     servingsPerContainer: '1',
     netQuantity: '200 ml',
-    mrp: 'Rs. 10/-',
     rawApproxText: 'Energy: 32 Kcal, Carbohydrate: 8g, Sugar: 9g, Protein: 0g, Fat: 0g (Per 100ml Approx)',
     generalTable: [
       { nutrient: 'Energy', per100ml: '32 Kcal', perServing: '64 Kcal' },
@@ -82,7 +81,6 @@ export const productDetails = {
     customerCare: '7020906373',
     email: 'pariwartan74@gmail.com',
     netQuantity: '200 ml',
-    mrp: 'Rs. 10/- (Incl. of all taxes)',
     batchNotice: 'Batch No. and Mfg. Date: SEE ON NECK / CAP',
     shelfLife: 'Best Before 3 Months From The Date of Mfg.',
     storageInstructions: 'Store in Cool & Dry Place. Keep Away From Direct Sun Light. Do not use if Seal is Broken. Serve Chilled.'

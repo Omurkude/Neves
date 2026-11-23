@@ -4,7 +4,7 @@ import { ShieldCheck } from 'lucide-react';
 const certificates = [
   {
     name: 'FSSAI',
-    src: '/images/certificates/fssai.png',
+    src: '/images/certificates/fssai-official.png',
     alt: 'FSSAI Food Safety and Standards Authority of India'
   },
   {
@@ -23,9 +23,9 @@ const certificates = [
     alt: 'UKSAF UK Scotland Accreditation Forum UKSAF-CB-009'
   },
   {
-    name: 'FDA',
-    src: '/images/certificates/fda.png',
-    alt: 'FDA Food Safety Standards Regulatory Authority'
+    name: 'FDA Maharashtra',
+    src: '/images/certificates/fda-maharashtra.png',
+    alt: 'Government of Maharashtra Food And Drug Administration'
   }
 ];
 

@@ -15,22 +15,30 @@ export const productDetails = {
   fssai: {
     title: 'FSSAI & Regulatory Details',
     licenceNumber: '11525058000154',
+    formType: 'Form C (License under FSS Act, 2006)',
+    authority: 'Government of Maharashtra Food And Drug Administration',
+    fssaiAuthority: 'Food Safety and Standards Authority of India',
     nameOfBusiness: 'JAGESHVAR MAHADEV BANGAR',
     unitName: 'Saheb Sultan Industries',
     tradeName: "SAHEB SULTAN'S NEVE COOL",
     address: 'GAT NO.191/1/B/6 ASHOK NAGAR TAH. DIST. BHANDARA MH-441906, Bhandara, Maharashtra - 441906',
-    shortAddress: 'Plot No. 191/1/B/6, Ashok Nagar, T.D. Bhandara, Maharashtra',
+    shortAddress: 'GAT NO.191/1/B/6, Ashok Nagar, Tah. Dist. Bhandara, Maharashtra - 441906',
     foodCategory: '14 - Beverages, excluding dairy products (14.1 - Non-alcoholic ("soft") beverages / Carbonated Water [14.1.4.1])',
     productCategory: 'Sweetened Carbonated Beverages',
     kindOfBusiness: 'Manufacturer - General Manufacturing',
-    categoryOfLicense: 'State License (Government of Maharashtra - FDA)',
+    categoryOfLicense: 'State License',
     dateOfIssue: '10-11-2025',
     validUpto: '09-11-2028',
+    designatedOfficer: 'User Id: 110982 (Verified through Mobile: 99XXXXXX87)',
     place: 'Bhandara',
     state: 'Maharashtra',
     contactNumber: '+91 70209 06373',
     email: 'pariwartan74@gmail.com',
-    disclaimer: 'This is a computer generated license and does not require any signature or stamp by authority.'
+    verificationUrl: 'https://foscos.fssai.gov.in/display-details/107738697/LIC/335204535',
+    certificateImage: '/images/certificates/fssai-certificate.png',
+    certificateHdImage: '/images/certificates/fssai-certificate-hd.png',
+    certificatePdf: '/images/certificates/fssai-license-certificate.pdf',
+    disclaimer: 'This is a computer generated license and doesn\'t require any signature or stamp by authority.'
   },
 
   ingredientsInfo: {

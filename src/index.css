@@ -51,8 +51,9 @@ body {
   overflow-x: hidden;
 }
 
-/* Devanagari Hindi font support */
-html[lang="hi"] body {
+/* Devanagari Hindi and Marathi font support */
+html[lang="hi"] body,
+html[lang="mr"] body {
   font-family: 'Noto Sans Devanagari', 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 

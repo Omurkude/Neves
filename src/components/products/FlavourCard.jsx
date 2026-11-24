@@ -1,12 +1,19 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { ArrowRight } from 'lucide-react';
+import { getFlavourKey } from '../../data/flavours.js';
 
 export default function FlavourCard({
   flavour,
   isSelected = false,
   onSelect
 }) {
+  const { t } = useTranslation();
   const { id, name, tagline, theme, image } = flavour;
+  const flavourKey = getFlavourKey(id);
+
+  const displayName = t(`flavours.${flavourKey}.name`, name);
+  const displayTagline = t(`flavours.${flavourKey}.tagline`, tagline);
 
   return (
     <div
@@ -20,7 +27,7 @@ export default function FlavourCard({
         }
       }}
       aria-pressed={isSelected}
-      aria-label={`Select ${name} to view details`}
+      aria-label={t('flavoursSection.selectAria', { name: displayName, defaultValue: `Select ${displayName} to view details` })}
       className={`group relative flex flex-col items-center justify-between rounded-2xl p-2.5 sm:p-3.5 transition-all duration-200 cursor-pointer text-center border ${theme.pastelBg} ${
         isSelected
           ? `${theme.activeRing}`
@@ -31,7 +38,7 @@ export default function FlavourCard({
       <div className="w-full flex items-center justify-center py-1 sm:py-2">
         <img
           src={image}
-          alt={`${name} bottle`}
+          alt={`${displayName} bottle`}
           loading="lazy"
           className="w-auto h-32 sm:h-40 md:h-44 object-contain drop-shadow-sm transition-transform duration-300 group-hover:scale-105"
         />
@@ -39,12 +46,12 @@ export default function FlavourCard({
 
       {/* Flavour Name - Default Text Style */}
       <h3 className="mt-2 text-xs sm:text-base font-extrabold text-[#0B192C] tracking-tight leading-snug">
-        {name}
+        {displayName}
       </h3>
 
       {/* Flavour Tagline - Default Text Style */}
       <p className="mt-0.5 sm:mt-1 text-[10px] sm:text-xs text-slate-500 font-normal leading-tight min-h-[26px] sm:min-h-[30px] flex items-center justify-center text-center px-1">
-        {tagline}
+        {displayTagline}
       </p>
 
       {/* Circular Arrow Indicator */}

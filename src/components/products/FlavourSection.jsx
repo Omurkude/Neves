@@ -1,18 +1,21 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import FlavourCard from './FlavourCard.jsx';
 import flavours from '../../data/flavours.js';
 
 export default function FlavourSection({ selectedFlavourId, onSelectFlavour }) {
+  const { t } = useTranslation();
+
   return (
     <section id="flavours" className="mb-6 sm:mb-8 scroll-mt-20">
       <div className="mb-3 sm:mb-4">
         {/* Clean, Default Heading matching earlier text style */}
         <h2 className="text-xl sm:text-2xl font-black text-[#0B192C] tracking-tight">
-          Our Flavours
+          {t('flavoursSection.title', 'Our Flavours')}
         </h2>
         {/* Subtitle in clean regular sans */}
         <p className="mt-0.5 sm:mt-1 text-xs sm:text-sm text-slate-500 font-normal">
-          Choose a flavour to view its details below.
+          {t('flavoursSection.subtitle', 'Choose a flavour to view its details below.')}
         </p>
       </div>
 

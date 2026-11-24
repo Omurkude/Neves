@@ -1,0 +1,204 @@
+{
+  "nav": {
+    "ourFlavours": "Our Flavours",
+    "fssai": "FSSAI & Regulatory Details",
+    "ingredients": "Ingredients & Allergen Information",
+    "nutrition": "Nutrition Facts & Calories",
+    "manufacturing": "Manufacturing Address",
+    "quality": "Quality Assurance Reports",
+    "support": "Brand & Customer Support",
+    "switchLanguage": "Switch Language",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "hero": {
+    "title": "Your Product Details",
+    "subtitle": "Discover everything about our products — ingredients, nutrition, manufacturing and regulatory details."
+  },
+  "flavoursSection": {
+    "title": "Our Flavours",
+    "subtitle": "Choose a flavour to view its details below.",
+    "selectAria": "Select {{name}} to view details"
+  },
+  "selectedProduct": {
+    "header": "Selected Product Details",
+    "netVolume": "Net Volume",
+    "packaging": "Packaging",
+    "syntheticColours": "Synthetic Food Colours",
+    "keyIngredients": "Key Ingredients",
+    "preservatives": "Preservatives:",
+    "allergens": "Allergens:",
+    "nutritionSummary": "Nutrition Summary",
+    "perServing": "Per Serving (200 ml)",
+    "nutrient": "Nutrient",
+    "per100ml": "Per 100 ml",
+    "perBottle": "Per Bottle",
+    "noAddedColours": "No added colours."
+  },
+  "accordions": {
+    "fssaiTitle": "FSSAI & Regulatory Details",
+    "ingredientsTitle": "Ingredients & Allergen Information",
+    "nutritionTitle": "Nutrition Facts & Calories",
+    "manufacturingTitle": "Manufacturing Address",
+    "qualityTitle": "Quality Assurance Reports",
+    "supportTitle": "Brand & Customer Support"
+  },
+  "fssaiSection": {
+    "govtOfMaharashtra": "Government of Maharashtra",
+    "fda": "Food And Drug Administration",
+    "tapToEnlarge": "Tap to Enlarge",
+    "scannableQr": "Authentic Scannable QR Code",
+    "enlarge": "Enlarge",
+    "downloadPdf": "Download PDF (7 Pgs)",
+    "verifyOnFoscos": "Verify on FoSCoS",
+    "licenceNumber": "FSSAI Licence Number",
+    "stateLicenseVerified": "State License Verified",
+    "formC": "Form C (License under FSS Act, 2006)",
+    "foodCategory": "Food Category & Sub-Category",
+    "kindOfBusiness": "Kind of Business",
+    "nameOfBusiness": "Name & Registered Licensee",
+    "addressOfPremises": "Address of Authorized Premises",
+    "contact": "Contact / Mobile",
+    "issuedOn": "Issued On",
+    "validUpto": "Valid Upto",
+    "officerVerification": "Officer Verification:",
+    "disclaimer": "This is a computer generated license and doesn't require any signature or stamp by authority.",
+    "modalTitle": "Government of Maharashtra — Form C License",
+    "modalLicenseNo": "License No:",
+    "modalQrNote": "The QR code on the certificate can be scanned directly to view the live FoSCoS record.",
+    "modalVerifyBtn": "Verify on FoSCoS Portal",
+    "close": "Close modal"
+  },
+  "ingredientsSection": {
+    "category": "Product Category",
+    "categoryValue": "SWEETENED CARBONATED BEVERAGES",
+    "activeFlavour": "Active Flavour:",
+    "vegetarian": "100% Vegetarian",
+    "officialLabelDeclaration": "Official Label Declaration",
+    "statutoryCompliance": "Statutory Compliance",
+    "declaredColours": "Declared Colours:",
+    "noAddedColoursFull": "No added colours. (100% Free from synthetic food colourings)",
+    "breakdownTitle": "Ingredients Breakdown & Function",
+    "statutoryTitle": "Statutory Declarations on Label",
+    "allergenTitle": "Allergen Information:",
+    "noFruitAdded": "No Fruit Added",
+    "class2Preservative": "Contains Class II Preservative (211)"
+  },
+  "nutritionSection": {
+    "netQuantity": "Net Quantity:",
+    "servings": "Servings Per Bottle: 1",
+    "labelDeclaration": "Label Declaration (Per 100ml Approx - {{name}}):",
+    "parameter": "Nutritional Parameter",
+    "per100mlApprox": "Per 100 ml (Approx)",
+    "perBottle200ml": "Per Bottle (200 ml)",
+    "approxFootnote": "* Approximate laboratory values based on standard 200 ml product label declaration."
+  },
+  "manufacturingSection": {
+    "unitTitle": "Manufacturing Unit",
+    "mfgBy": "MFG. BY:",
+    "customerCare": "Customer Care:",
+    "specsTitle": "Product Specifications",
+    "netQuantity": "Net Quantity:",
+    "shelfLife": "Shelf Life:",
+    "batchNoticeTitle": "Batch & Mfg. Date:",
+    "batchNoticeValue": "Batch No. and Mfg. Date: SEE ON NECK / CAP",
+    "storageTitle": "Storage Instructions:",
+    "storageValue": "Store in Cool & Dry Place. Keep Away From Direct Sun Light. Do not use if Seal is Broken. Serve Chilled."
+  },
+  "qualitySection": {
+    "overview": "NEVE COOL beverages are manufactured under strict sanitary standards in compliance with FSSAI Food Safety regulations (Schedule-4).",
+    "point1Title": "Treated Water Purification",
+    "point1Detail": "Multi-stage filtration, reverse osmosis and UV sterilization.",
+    "point2Title": "Quality Sealed Packaging",
+    "point2Detail": "200 ml food-grade PET bottles with tamper-evident seal maintaining carbonation.",
+    "point3Title": "Regulatory Compliance",
+    "point3Detail": "Manufactured under State License No. 11525058000154 (FDA Maharashtra).",
+    "footnote": "Manufactured by Saheb Sultan Industries under FSSAI License No. 11525058000154."
+  },
+  "supportSection": {
+    "description": "For consumer feedback, queries, or distributor inquiries, get in touch with our customer care:",
+    "helpline": "Mobile / Helpline:",
+    "email": "Support Email:",
+    "address": "Registered Address:",
+    "hours": "Operating Hours:",
+    "hoursValue": "Mon – Sat: 9:30 AM to 6:30 PM IST"
+  },
+  "marquee": {
+    "title": "We Are Certified By"
+  },
+  "footer": {
+    "copyright": "© Neve Beverages. All rights reserved.",
+    "address": "Ashoknagar, Bhandara, Maharashtra - 441906 | Mo: +91 70209 06373"
+  },
+  "flavours": {
+    "classicCola": {
+      "name": "Classic Cola",
+      "variant": "SAHEB SULTAN'S NEVE COOL Classic Cola",
+      "tagline": "Original taste, unchanged.",
+      "description": "An authentic Indian spiced cola crafted with purified treated water, effervescent CO2, natural salt, and rich effervescent refreshment.",
+      "packaging": "200 ml Food-Grade PET Bottle",
+      "shelfLife": "Best Before 3 Months From Date of Mfg.",
+      "rawIngredients": "Treated Water, Sugar, CO2, Natural Salt, Malic-Fumaric Acid, Stabilising Agents.",
+      "rawDeclarations": "Contains : Class II Preservative (211), Synthetic Food Colour (E-150-D), No Fruit Added.",
+      "syntheticColoursDetail": "Synthetic Food Colour (E-150-D)",
+      "allergenNotice": "100% Vegetarian. Contains no common allergens (Gluten-free, Vegan, Nut-free, Dairy-free)."
+    },
+    "orangeCola": {
+      "name": "Orange Cola",
+      "variant": "SAHEB SULTAN'S NEVE COOL Orange Cola",
+      "tagline": "Unleash the Power of Orange..!",
+      "description": "Sun-drenched, juicy orange notes layered over a crisp, effervescent sparkling soda base. Delivers tangy, sweet refreshment in every chilled sip.",
+      "packaging": "200 ml Food-Grade PET Bottle",
+      "shelfLife": "Best Before 3 Months From Date of Mfg.",
+      "rawIngredients": "Treated Water, Sugar, Co2, Natural Salt, Malic-Fumaric Acid, Stabilising Agents.",
+      "rawDeclarations": "Contains : Class II Preservate (211), Synthetic Food Colors (E-102, D-110) No Fruit Added. Permitted food-grade colouring: Tartrazine and Sunset Yellow.",
+      "syntheticColoursDetail": "Permitted food-grade colouring: Tartrazine and Sunset Yellow (E-102, E-110).",
+      "allergenNotice": "100% Vegetarian. Contains no common allergens (Gluten-free, Vegan, Nut-free, Dairy-free). No Fruit Added."
+    },
+    "limeCola": {
+      "name": "Lime Cola",
+      "variant": "SAHEB SULTAN'S NEVE COOL Lime Cola",
+      "tagline": "Zesty. Fresh. Unique.",
+      "description": "A vibrant, thirst-quenching soda infused with purified treated water, sparkling carbonation, and crisp key lime citrus refreshment.",
+      "packaging": "200 ml Food-Grade PET Bottle",
+      "shelfLife": "Best Before 3 Months From Date of Mfg.",
+      "rawIngredients": "Treated Water, Sugar, Co2, Natural Salt, Malic-Fumaric Acid, Stabilising Agents.",
+      "rawDeclarations": "Contains : Class II Preservative (211), No added colours. No Fruit Added.",
+      "syntheticColoursDetail": "No added colours.",
+      "allergenNotice": "100% Vegetarian. Contains no common allergens (Gluten-free, Vegan, Nut-free, Dairy-free)."
+    }
+  },
+  "ingredientsList": {
+    "treatedWater": {
+      "name": "Treated Water",
+      "purpose": "Purified sparkling water foundation"
+    },
+    "sugar": {
+      "name": "Sugar",
+      "purpose": "Pure cane sweetness (9g per 100ml)"
+    },
+    "co2": {
+      "name": "Carbon Dioxide (CO2)",
+      "purpose": "Effervescent carbonation & sparkling fizz"
+    },
+    "naturalSalt": {
+      "name": "Natural Salt",
+      "purpose": "Electrolyte balance & crisp refreshing taste"
+    },
+    "malicFumaric": {
+      "name": "Malic-Fumaric Acid",
+      "purpose": "Acidity regulators for balanced tartness"
+    },
+    "stabilising": {
+      "name": "Stabilising Agents",
+      "purpose": "Smooth emulsion & texture consistency"
+    }
+  },
+  "nutrients": {
+    "energy": "Energy",
+    "carbohydrate": "Carbohydrate",
+    "sugar": "Sugar",
+    "protein": "Protein",
+    "fat": "Fat"
+  }
+}

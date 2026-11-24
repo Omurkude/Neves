@@ -51,6 +51,11 @@ body {
   overflow-x: hidden;
 }
 
+/* Devanagari Hindi font support */
+html[lang="hi"] body {
+  font-family: 'Noto Sans Devanagari', 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
 /* Hide scrollbar for Chrome, Safari and Opera */
 .no-scrollbar::-webkit-scrollbar {
   display: none;

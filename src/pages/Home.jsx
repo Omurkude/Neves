@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import {
   FileText,
   Leaf,
@@ -23,6 +24,8 @@ import SupportSection from '../components/details/SupportSection.jsx';
 import flavours, { getFlavourById } from '../data/flavours.js';
 
 export default function Home() {
+  const { t } = useTranslation();
+
   // State for selected flavour (defaults to Classic Cola)
   const [selectedFlavourId, setSelectedFlavourId] = useState(flavours[0]?.id || 'classic-cola');
 
@@ -55,10 +58,10 @@ export default function Home() {
         {/* 2. Hero Section: Default clean text style */}
         <section className="mb-6 sm:mb-8 text-left">
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#0B192C] tracking-tight">
-            Your Product Details
+            {t('hero.title', 'Your Product Details')}
           </h1>
           <p className="mt-1 sm:mt-2 text-xs sm:text-sm md:text-base text-slate-500 leading-relaxed font-normal">
-            Discover everything about our products — ingredients, nutrition, manufacturing and regulatory details.
+            {t('hero.subtitle', 'Discover everything about our products — ingredients, nutrition, manufacturing and regulatory details.')}
           </p>
         </section>
 
@@ -77,7 +80,7 @@ export default function Home() {
           <div id="fssai-section" className="scroll-mt-16">
             <Accordion
               id="fssai"
-              title="FSSAI & Regulatory Details"
+              title={t('accordions.fssaiTitle', 'FSSAI & Regulatory Details')}
               icon={FileText}
               isOpen={openSections.fssai}
               onToggle={() => toggleSection('fssai')}
@@ -90,7 +93,7 @@ export default function Home() {
           <div id="ingredients-section" className="scroll-mt-16">
             <Accordion
               id="ingredients"
-              title="Ingredients & Allergen Information"
+              title={t('accordions.ingredientsTitle', 'Ingredients & Allergen Information')}
               icon={Leaf}
               isOpen={openSections.ingredients}
               onToggle={() => toggleSection('ingredients')}
@@ -103,7 +106,7 @@ export default function Home() {
           <div id="nutrition-section" className="scroll-mt-16">
             <Accordion
               id="nutrition"
-              title="Nutrition Facts & Calories"
+              title={t('accordions.nutritionTitle', 'Nutrition Facts & Calories')}
               icon={BarChart3}
               isOpen={openSections.nutrition}
               onToggle={() => toggleSection('nutrition')}
@@ -116,7 +119,7 @@ export default function Home() {
           <div id="manufacturing-section" className="scroll-mt-16">
             <Accordion
               id="manufacturing"
-              title="Manufacturing Address"
+              title={t('accordions.manufacturingTitle', 'Manufacturing Address')}
               icon={Factory}
               isOpen={openSections.manufacturing}
               onToggle={() => toggleSection('manufacturing')}
@@ -129,7 +132,7 @@ export default function Home() {
           <div id="quality-section" className="scroll-mt-16">
             <Accordion
               id="quality"
-              title="Quality Assurance Reports"
+              title={t('accordions.qualityTitle', 'Quality Assurance Reports')}
               icon={ShieldCheck}
               isOpen={openSections.quality}
               onToggle={() => toggleSection('quality')}
@@ -142,7 +145,7 @@ export default function Home() {
           <div id="support-section" className="scroll-mt-16">
             <Accordion
               id="support"
-              title="Brand & Customer Support"
+              title={t('accordions.supportTitle', 'Brand & Customer Support')}
               icon={Headphones}
               isOpen={openSections.support}
               onToggle={() => toggleSection('support')}

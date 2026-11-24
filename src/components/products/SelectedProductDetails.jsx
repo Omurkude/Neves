@@ -1,10 +1,14 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Palette, ShieldAlert, Sparkles, CheckCircle2 } from 'lucide-react';
+import { getFlavourKey, getIngredientKey } from '../../data/flavours.js';
 
 export default function SelectedProductDetails({ flavour }) {
+  const { t } = useTranslation();
   if (!flavour) return null;
 
   const {
+    id,
     name,
     variant,
     description,
@@ -23,6 +27,15 @@ export default function SelectedProductDetails({ flavour }) {
     tagline
   } = flavour;
 
+  const flavourKey = getFlavourKey(id);
+  const displayName = t(`flavours.${flavourKey}.name`, name);
+  const displayVariant = t(`flavours.${flavourKey}.variant`, variant || name);
+  const displayTagline = t(`flavours.${flavourKey}.tagline`, tagline);
+  const displayDescription = t(`flavours.${flavourKey}.description`, description);
+  const displayPackaging = t(`flavours.${flavourKey}.packaging`, specs.packaging);
+  const displaySyntheticDetail = t(`flavours.${flavourKey}.syntheticColoursDetail`, syntheticColoursDetail);
+  const displayAllergenNotice = t(`flavours.${flavourKey}.allergenNotice`, allergenNotice);
+
   return (
     <div id="selected-product" className="mb-6 sm:mb-8 scroll-mt-20">
       <div className="bg-white rounded-2xl border border-slate-200/80 shadow-2xs p-4 sm:p-6 transition-all duration-200">
@@ -34,11 +47,11 @@ export default function SelectedProductDetails({ flavour }) {
               style={{ backgroundColor: theme.accentColor }}
             />
             <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-500">
-              Selected Product Details
+              {t('selectedProduct.header', 'Selected Product Details')}
             </span>
           </div>
           <span className="text-xs sm:text-sm font-extrabold text-[#0B192C] truncate ml-2">
-            {variant || name}
+            {displayVariant}
           </span>
         </div>
 
@@ -49,7 +62,7 @@ export default function SelectedProductDetails({ flavour }) {
             <div className={`w-full max-w-[210px] sm:max-w-[240px] flex items-center justify-center p-3 rounded-2xl ${theme.pastelBg} border ${theme.cardBorder}`}>
               <img
                 src={image}
-                alt={`${name} bottle`}
+                alt={`${displayName} bottle`}
                 className="w-auto h-auto max-h-[240px] sm:max-h-[280px] object-contain drop-shadow-md transition-all duration-300"
               />
             </div>
@@ -59,25 +72,25 @@ export default function SelectedProductDetails({ flavour }) {
           <div className="sm:col-span-7 space-y-3 text-center sm:text-left">
             <div>
               <h3 className="text-xl sm:text-2xl font-black text-[#0B192C] tracking-tight">
-                {variant || name}
+                {displayVariant}
               </h3>
               <p className="mt-1 font-semibold text-xs sm:text-sm" style={{ color: theme.accentColor }}>
-                "{tagline}"
+                "{displayTagline}"
               </p>
               <p className="mt-1.5 text-xs sm:text-sm text-slate-600 leading-relaxed font-normal max-w-md mx-auto sm:mx-0">
-                {description}
+                {displayDescription}
               </p>
             </div>
 
             {/* Quick Specs Chips */}
             <div className="grid grid-cols-2 gap-2 pt-1 text-xs max-w-sm sm:max-w-none mx-auto sm:mx-0">
               <div className="p-2 sm:p-2.5 rounded-xl bg-slate-50 border border-slate-200/70 text-center sm:text-left">
-                <span className="block font-semibold text-slate-400 text-[10px] uppercase">Net Volume</span>
+                <span className="block font-semibold text-slate-400 text-[10px] uppercase">{t('selectedProduct.netVolume', 'Net Volume')}</span>
                 <span className="font-bold text-[#0B192C] text-xs sm:text-sm">{specs.volume}</span>
               </div>
               <div className="p-2 sm:p-2.5 rounded-xl bg-slate-50 border border-slate-200/70 text-center sm:text-left">
-                <span className="block font-semibold text-slate-400 text-[10px] uppercase">Packaging</span>
-                <span className="font-bold text-[#0B192C] text-xs sm:text-sm">{specs.packaging}</span>
+                <span className="block font-semibold text-slate-400 text-[10px] uppercase">{t('selectedProduct.packaging', 'Packaging')}</span>
+                <span className="font-bold text-[#0B192C] text-xs sm:text-sm">{displayPackaging}</span>
               </div>
             </div>
 
@@ -89,7 +102,7 @@ export default function SelectedProductDetails({ flavour }) {
             }`}>
               <div className="flex items-center gap-1.5 font-bold uppercase tracking-wider text-[11px] mb-1">
                 <Palette className={`w-3.5 h-3.5 shrink-0 ${hasSyntheticColours ? 'text-amber-700' : 'text-emerald-700'}`} />
-                <span>Synthetic Food Colours</span>
+                <span>{t('selectedProduct.syntheticColours', 'Synthetic Food Colours')}</span>
               </div>
               <div className="flex flex-wrap items-center gap-2">
                 {hasSyntheticColours && syntheticColours.length > 0 ? (
@@ -102,13 +115,13 @@ export default function SelectedProductDetails({ flavour }) {
                       ))}
                     </div>
                     <span className="text-[11px] font-medium text-slate-700">
-                      {syntheticColoursDetail}
+                      {displaySyntheticDetail}
                     </span>
                   </>
                 ) : (
                   <span className="font-bold text-emerald-800 text-xs flex items-center gap-1">
                     <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                    No added colours.
+                    {t('selectedProduct.noAddedColours', 'No added colours.')}
                   </span>
                 )}
               </div>
@@ -121,29 +134,34 @@ export default function SelectedProductDetails({ flavour }) {
           {/* Key Ingredients */}
           <div className="p-3.5 rounded-xl bg-slate-50/70 border border-slate-200/70 text-left">
             <h4 className="text-xs font-bold text-[#0B192C] tracking-wider uppercase mb-2">
-              Key Ingredients
+              {t('selectedProduct.keyIngredients', 'Key Ingredients')}
             </h4>
             <ul className="space-y-1 text-xs text-slate-600 mb-2.5">
-              {ingredients.map((item) => (
-                <li key={typeof item === 'string' ? item : item.name} className="flex items-start gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-slate-400 mt-1.5 shrink-0" />
-                  <span>{typeof item === 'string' ? item : item.name}</span>
-                </li>
-              ))}
+              {ingredients.map((item) => {
+                const rawName = typeof item === 'string' ? item : item.name;
+                const ingKey = getIngredientKey(rawName);
+                const ingName = ingKey ? t(`ingredientsList.${ingKey}.name`, rawName) : rawName;
+                return (
+                  <li key={rawName} className="flex items-start gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-slate-400 mt-1.5 shrink-0" />
+                    <span>{ingName}</span>
+                  </li>
+                );
+              })}
             </ul>
 
             {/* Preservatives */}
             {preservatives && preservatives.length > 0 && (
               <div className="pt-2 border-t border-slate-200/60 text-[11px] text-slate-600">
-                <strong className="text-slate-800">Preservatives: </strong>
-                {preservatives.join(', ')}
+                <strong className="text-slate-800">{t('selectedProduct.preservatives', 'Preservatives:')} </strong>
+                {preservatives.map((p) => p.includes('211') ? t('ingredientsSection.class2Preservative', p) : p).join(', ')}
               </div>
             )}
 
             {/* Allergens */}
             <div className="pt-1.5 text-[11px] text-slate-500">
-              <strong className="text-slate-700">Allergens: </strong>
-              {allergenNotice || (Array.isArray(allergens) ? allergens.join(', ') : allergens)}
+              <strong className="text-slate-700">{t('selectedProduct.allergens', 'Allergens:')} </strong>
+              {displayAllergenNotice || (Array.isArray(allergens) ? allergens.join(', ') : allergens)}
             </div>
           </div>
 
@@ -151,28 +169,33 @@ export default function SelectedProductDetails({ flavour }) {
           <div className="p-3.5 rounded-xl bg-slate-50/70 border border-slate-200/70 text-left">
             <div className="flex items-center justify-between mb-2">
               <h4 className="text-xs font-bold text-[#0B192C] tracking-wider uppercase">
-                Nutrition Summary
+                {t('selectedProduct.nutritionSummary', 'Nutrition Summary')}
               </h4>
-              <span className="text-[10px] text-slate-500 font-semibold">Per Serving (200 ml)</span>
+              <span className="text-[10px] text-slate-500 font-semibold">{t('selectedProduct.perServing', 'Per Serving (200 ml)')}</span>
             </div>
 
             <div className="overflow-x-auto rounded-lg border border-slate-200 bg-white">
               <table className="w-full text-[11px] text-left">
                 <thead>
                   <tr className="bg-slate-50 text-slate-600 font-semibold border-b border-slate-200">
-                    <th className="py-1 px-2.5">Nutrient</th>
-                    <th className="py-1 px-2.5 text-right">Per 100 ml</th>
-                    <th className="py-1 px-2.5 text-right font-bold text-[#0B192C]">Per Bottle</th>
+                    <th className="py-1 px-2.5">{t('selectedProduct.nutrient', 'Nutrient')}</th>
+                    <th className="py-1 px-2.5 text-right">{t('selectedProduct.per100ml', 'Per 100 ml')}</th>
+                    <th className="py-1 px-2.5 text-right font-bold text-[#0B192C]">{t('selectedProduct.perBottle', 'Per Bottle')}</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-100 text-slate-600">
-                  {nutrition?.table?.map((row) => (
-                    <tr key={row.nutrient || row.metric}>
-                      <td className="py-1 px-2.5 font-medium text-slate-800">{row.nutrient || row.metric}</td>
-                      <td className="py-1 px-2.5 text-right text-slate-500">{row.per100ml}</td>
-                      <td className="py-1 px-2.5 text-right font-bold text-[#0B192C]">{row.perServing}</td>
-                    </tr>
-                  ))}
+                  {nutrition?.table?.map((row) => {
+                    const metricName = row.nutrient || row.metric;
+                    const nutrientKey = metricName.toLowerCase();
+                    const translatedNutrient = t(`nutrients.${nutrientKey}`, metricName);
+                    return (
+                      <tr key={metricName}>
+                        <td className="py-1 px-2.5 font-medium text-slate-800">{translatedNutrient}</td>
+                        <td className="py-1 px-2.5 text-right text-slate-500">{row.per100ml}</td>
+                        <td className="py-1 px-2.5 text-right font-bold text-[#0B192C]">{row.perServing}</td>
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
             </div>

@@ -9,9 +9,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "i18next": "^27.2.6",
     "lucide-react": "^0.475.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-i18next": "^18.0.3"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.0.9",

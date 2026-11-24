@@ -187,4 +187,23 @@ export function getFlavourById(id) {
   return flavours.find((f) => f.id === id) || flavours[0];
 }
 
+export function getFlavourKey(id) {
+  if (id === 'classic-cola' || id === 'jeera-soda') return 'classicCola';
+  if (id === 'orange-cola' || id === 'orange-flavour') return 'orangeCola';
+  if (id === 'lime-cola' || id === 'lime-soda') return 'limeCola';
+  return 'classicCola';
+}
+
+export function getIngredientKey(name) {
+  if (!name) return null;
+  const lower = name.toLowerCase();
+  if (lower.includes('water')) return 'treatedWater';
+  if (lower.includes('sugar')) return 'sugar';
+  if (lower.includes('co2') || lower.includes('carbon dioxide')) return 'co2';
+  if (lower.includes('salt')) return 'naturalSalt';
+  if (lower.includes('malic') || lower.includes('fumaric')) return 'malicFumaric';
+  if (lower.includes('stabili')) return 'stabilising';
+  return null;
+}
+
 export default flavours;

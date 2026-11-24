@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { ShieldCheck } from 'lucide-react';
 
 const certificates = [
@@ -33,6 +34,8 @@ const certificates = [
 const sequenceItems = [...certificates, ...certificates, ...certificates];
 
 export default function CertificationMarquee() {
+  const { t } = useTranslation();
+
   return (
     <section
       aria-label="Food Safety Certifications"
@@ -43,7 +46,7 @@ export default function CertificationMarquee() {
         <div className="inline-flex items-center justify-center gap-1.5 text-slate-800">
           <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" strokeWidth={2.2} />
           <h3 className="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-800">
-            We Are Certified By
+            {t('marquee.title', 'We Are Certified By')}
           </h3>
         </div>
       </div>

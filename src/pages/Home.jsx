@@ -58,7 +58,7 @@ export default function Home() {
         {/* 2. Hero Section: Default clean text style */}
         <section className="mb-6 sm:mb-8 text-left">
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#0B192C] tracking-tight">
-            {t('hero.title', 'Your Product Details')}
+            {t('hero.title', 'Product Details')}
           </h1>
           <p className="mt-1 sm:mt-2 text-xs sm:text-sm md:text-base text-slate-500 leading-relaxed font-normal">
             {t('hero.subtitle', 'Discover everything about our products — ingredients, nutrition, manufacturing and regulatory details.')}
